@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.7.0
+
+- Extended `__getitem__` subscripting on `RangedSummarizedExperiment` to support direct slicing by `GenomicRanges` or `CompressedGenomicRangesList` objects.
+
 ## Version 0.6.0 - 0.6.5
 
 - Classes now extend `BiocObject` from biocutils, which provides a metadata field.
