@@ -19,12 +19,12 @@ def test_RSE_genomic_slice():
         }
     )
     gr = genomicranges.GenomicRanges.from_pandas(df_gr)
-    
+
     rse = RangedSummarizedExperiment(
         assays={"counts": np.random.rand(3, 2)},
         row_ranges=gr,
     )
-    
+
     query_df = pd.DataFrame(
         {
             "seqnames": ["chr2"],
@@ -34,12 +34,12 @@ def test_RSE_genomic_slice():
         }
     )
     query_gr = genomicranges.GenomicRanges.from_pandas(query_df)
-    
+
     sliced = rse[query_gr, :]
     assert sliced is not None
     assert sliced.shape == (1, 2)
     assert sliced.row_ranges.get_seqnames() == ["chr2"]
-    
+
     sliced_1d = rse[query_gr]
     assert sliced_1d.shape == (1, 2)
     assert sliced_1d.row_ranges.get_seqnames() == ["chr2"]
