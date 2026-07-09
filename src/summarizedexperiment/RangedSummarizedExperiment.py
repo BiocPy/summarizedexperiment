@@ -392,6 +392,17 @@ class RangedSummarizedExperiment(SummarizedExperiment):
 
     # rest of them are inherited from BaseSE.
 
+    def _normalize_row_slice(self, rows: Union[str, int, bool, Sequence]):
+
+        if isinstance(rows, (GenomicRanges, CompressedGenomicRangesList)):
+            hits = self.row_ranges.find_overlaps(query=rows)
+            rows = hits.get_column("self_hits")
+        elif hasattr(rows, "find_overlaps"):
+            hits = self.row_ranges.find_overlaps(query=rows)
+            rows = hits.get_column("self_hits")
+
+        return super()._normalize_row_slice(rows)
+
     def get_slice(
         self,
         rows: Optional[Union[str, int, bool, Sequence]],

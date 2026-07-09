@@ -4,6 +4,9 @@ import genomicranges
 import numpy as np
 import pandas as pd
 import pytest
+from genomicranges import GenomicRanges
+from iranges import IRanges
+
 from summarizedexperiment.RangedSummarizedExperiment import RangedSummarizedExperiment
 from summarizedexperiment.SummarizedExperiment import SummarizedExperiment
 
@@ -15,42 +18,36 @@ __license__ = "MIT"
 nrows = 200
 ncols = 6
 counts = np.random.rand(nrows, ncols)
-df_gr = pd.DataFrame(
-    {
-        "seqnames": [
-            "chr1",
-            "chr2",
-            "chr2",
-            "chr2",
-            "chr1",
-            "chr1",
-            "chr3",
-            "chr3",
-            "chr3",
-            "chr3",
-        ]
-        * 20,
-        "starts": range(100, 300),
-        "ends": range(110, 310),
-        "strand": ["-", "+", "+", "*", "*", "+", "+", "+", "-", "-"] * 20,
-        "score": range(0, 200),
-        "GC": [random() for _ in range(10)] * 20,
-    }
-)
+df_gr = pd.DataFrame({
+    "seqnames": [
+        "chr1",
+        "chr2",
+        "chr2",
+        "chr2",
+        "chr1",
+        "chr1",
+        "chr3",
+        "chr3",
+        "chr3",
+        "chr3",
+    ]
+    * 20,
+    "starts": range(100, 300),
+    "ends": range(110, 310),
+    "strand": ["-", "+", "+", "*", "*", "+", "+", "+", "-", "-"] * 20,
+    "score": range(0, 200),
+    "GC": [random() for _ in range(10)] * 20,
+})
 
 gr = genomicranges.GenomicRanges.from_pandas(df_gr)
 
-col_data = pd.DataFrame(
-    {
-        "treatment": ["ChIP", "Input"] * 3,
-    }
-)
+col_data = pd.DataFrame({
+    "treatment": ["ChIP", "Input"] * 3,
+})
 
 
 def test_RSE_props():
-    tse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    tse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     assert tse is not None
     assert isinstance(tse, RangedSummarizedExperiment)
@@ -78,9 +75,7 @@ def test_RSE_props():
 
 
 def test_RSE_subset():
-    tse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    tse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     assert tse is not None
     assert isinstance(tse, RangedSummarizedExperiment)
@@ -96,9 +91,7 @@ def test_RSE_subset():
 
 
 def test_RSE_subset_assays():
-    tse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    tse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     assert tse is not None
     assert isinstance(tse, RangedSummarizedExperiment)
@@ -112,9 +105,7 @@ def test_RSE_subset_assays():
 
 
 def test_RSE_coverage():
-    tse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    tse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     assert tse is not None
     assert isinstance(tse, RangedSummarizedExperiment)
@@ -125,9 +116,7 @@ def test_RSE_coverage():
 
 
 def test_RSE_distance_methods():
-    tse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    tse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     assert tse is not None
     assert isinstance(tse, RangedSummarizedExperiment)
@@ -143,9 +132,7 @@ def test_RSE_distance_methods():
 
 
 def test_RSE_range_methods():
-    tse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    tse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     assert tse is not None
     assert isinstance(tse, RangedSummarizedExperiment)
@@ -170,9 +157,7 @@ def test_RSE_range_methods():
 
 
 def test_RSE_search():
-    tse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    tse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     assert tse is not None
     assert isinstance(tse, RangedSummarizedExperiment)
@@ -185,9 +170,7 @@ def test_RSE_search():
 
 
 def test_RSE_sort_order():
-    tse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    tse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     assert tse is not None
     assert isinstance(tse, RangedSummarizedExperiment)
@@ -200,10 +183,9 @@ def test_RSE_sort_order():
     assert res is not None
     assert len(res.row_ranges) == len(tse.row_ranges)
 
+
 def test_RSE_assay_getters_and_setters():
-    tse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    tse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     assert tse is not None
     assert isinstance(tse, RangedSummarizedExperiment)
@@ -221,10 +203,9 @@ def test_RSE_assay_getters_and_setters():
     assert tse.get_assay("new_counts") is not None
     assert new_tse.get_assay("new_counts") is not None
 
+
 def test_RSE_to_se():
-    rse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    rse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     se = rse.to_summarizedexperiment()
 
@@ -232,10 +213,9 @@ def test_RSE_to_se():
     assert isinstance(se, SummarizedExperiment)
     assert rse.shape == se.shape
 
+
 def test_RSE_to_se_with_ranges():
-    tse = RangedSummarizedExperiment(
-        assays={"counts": counts}, row_ranges=gr, column_data=col_data
-    )
+    tse = RangedSummarizedExperiment(assays={"counts": counts}, row_ranges=gr, column_data=col_data)
 
     se = tse.to_summarizedexperiment()
 
@@ -247,3 +227,62 @@ def test_RSE_to_se_with_ranges():
     assert "seqnames" in se.row_data.column_names
     assert "starts" in se.row_data.column_names
     assert "ends" in se.row_data.column_names
+
+
+def test_RSE_combine():
+    gr1 = GenomicRanges(seqnames=["chr1", "chr2"], ranges=IRanges([1, 100], [10, 50]), strand=["+", "-"])
+    rse1 = RangedSummarizedExperiment(
+        assays={"counts": np.array([[1, 2], [3, 4]])}, row_ranges=gr1, column_names=["sample1", "sample2"]
+    )
+
+    gr2 = GenomicRanges(seqnames=["chr3"], ranges=IRanges([200], [20]), strand=["*"])
+    rse2 = RangedSummarizedExperiment(
+        assays={"counts": np.array([[5, 6]])}, row_ranges=gr2, column_names=["sample1", "sample2"]
+    )
+
+    combined_rows = rse1.combine_rows(rse2)
+    assert combined_rows.shape == (3, 2)
+    assert list(combined_rows.row_ranges.get_seqnames()) == ["chr1", "chr2", "chr3"]
+
+    combined_rows_rel = rse1.relaxed_combine_rows(rse2)
+    assert combined_rows_rel.shape == (3, 2)
+
+    rse3 = RangedSummarizedExperiment(assays={"counts": np.array([[7], [8]])}, row_ranges=gr1, column_names=["sample3"])
+    combined_cols = rse1.combine_columns(rse3)
+    assert combined_cols.shape == (2, 3)
+    assert list(combined_cols.column_names) == ["sample1", "sample2", "sample3"]
+
+    combined_cols_rel = rse1.relaxed_combine_columns(rse3)
+    assert combined_cols_rel.shape == (2, 3)
+
+
+def test_RSE_genomic_slice():
+    df_gr = pd.DataFrame({
+        "seqnames": ["chr1", "chr2", "chr3"],
+        "starts": [100, 200, 300],
+        "ends": [150, 250, 350],
+        "strand": ["+", "-", "*"],
+    })
+    gr = genomicranges.GenomicRanges.from_pandas(df_gr)
+
+    rse = RangedSummarizedExperiment(
+        assays={"counts": np.random.rand(3, 2)},
+        row_ranges=gr,
+    )
+
+    query_df = pd.DataFrame({
+        "seqnames": ["chr2"],
+        "starts": [220],
+        "ends": [230],
+        "strand": ["-"],
+    })
+    query_gr = genomicranges.GenomicRanges.from_pandas(query_df)
+
+    sliced = rse[query_gr, :]
+    assert sliced is not None
+    assert sliced.shape == (1, 2)
+    assert sliced.row_ranges.get_seqnames() == ["chr2"]
+
+    sliced_1d = rse[query_gr]
+    assert sliced_1d.shape == (1, 2)
+    assert sliced_1d.row_ranges.get_seqnames() == ["chr2"]
