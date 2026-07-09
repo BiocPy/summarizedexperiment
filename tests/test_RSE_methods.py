@@ -4,7 +4,8 @@ import genomicranges
 import numpy as np
 import pandas as pd
 import pytest
-from genomicranges import GenomicRanges, IRanges
+from genomicranges import GenomicRanges
+from iranges import IRanges
 
 from summarizedexperiment.RangedSummarizedExperiment import RangedSummarizedExperiment
 from summarizedexperiment.SummarizedExperiment import SummarizedExperiment
