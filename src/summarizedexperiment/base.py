@@ -33,7 +33,10 @@ def _guess_assay_shape(assays, rows, cols, row_names, col_names) -> tuple:
     _keys = list(assays.keys())
     if len(_keys) > 0:
         _first = _keys[0]
-        return assays[_first].shape
+        mat = assays[_first]
+        if not hasattr(mat, "shape"):
+            raise TypeError(f"Assay: '{_first}' is not a supported matrix representation.")
+        return mat.shape
 
     _r = 0
     if rows is not None:
@@ -201,14 +204,14 @@ class BaseSE(ut.BiocObject):
         self._cols = _sanitize_frame(column_data, self._shape[1])
 
         if row_names is None:
-            row_names = self._rows.row_names
+            row_names = self._rows.row_names if hasattr(self._rows, "row_names") else None
 
         if row_names is not None and not isinstance(row_names, ut.Names):
             row_names = ut.Names(row_names)
         self._row_names = row_names
 
         if column_names is None:
-            column_names = self._cols.row_names
+            column_names = self._cols.row_names if hasattr(self._cols, "row_names") else None
 
         if column_names is not None and not isinstance(column_names, ut.Names):
             column_names = ut.Names(column_names)
