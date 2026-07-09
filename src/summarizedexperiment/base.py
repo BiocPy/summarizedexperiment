@@ -1125,7 +1125,7 @@ class BaseSE(ut.BiocObject):
         Returns:
             Same type as caller with the sliced rows and columns.
         """
-        if isinstance(args, (str, int)):
+        if not isinstance(args, tuple):
             return self.get_slice(args, slice(None))
 
         if isinstance(args, tuple):
@@ -1138,8 +1138,6 @@ class BaseSE(ut.BiocObject):
                 return self.get_slice(args[0], args[1])
             else:
                 raise ValueError(f"`{type(self).__name__}` only supports 2-dimensional slicing.")
-
-        raise TypeError("args must be a sequence or a scalar integer or string or a tuple of atmost 2 values.")
 
     ################################
     ######>> AnnData interop <<#####
