@@ -4,11 +4,11 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html">
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
-        <title>summarizedexperiment.RangedSummarizedExperiment - SummarizedExperiment 0.6.5 documentation</title>
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>summarizedexperiment.RangedSummarizedExperiment - SummarizedExperiment 0.7.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=8dab3a3b" />
     
     
@@ -161,7 +161,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SummarizedExperiment 0.6.5 documentation</div></a>
+      <a href="../../index.html"><div class="brand">SummarizedExperiment 0.7.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -182,7 +182,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
-  <span class="sidebar-brand-text">SummarizedExperiment 0.6.5 documentation</span>
+  <span class="sidebar-brand-text">SummarizedExperiment 0.7.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -650,6 +650,17 @@
     <span class="c1">##########################</span>
 
     <span class="c1"># rest of them are inherited from BaseSE.</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_normalize_row_slice</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">]):</span>
+
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="p">(</span><span class="n">GenomicRanges</span><span class="p">,</span> <span class="n">CompressedGenomicRangesList</span><span class="p">)):</span>
+            <span class="n">hits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_ranges</span><span class="o">.</span><span class="n">find_overlaps</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">rows</span><span class="p">)</span>
+            <span class="n">rows</span> <span class="o">=</span> <span class="n">hits</span><span class="o">.</span><span class="n">get_column</span><span class="p">(</span><span class="s2">&quot;self_hits&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="s2">&quot;find_overlaps&quot;</span><span class="p">):</span>
+            <span class="n">hits</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_ranges</span><span class="o">.</span><span class="n">find_overlaps</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="n">rows</span><span class="p">)</span>
+            <span class="n">rows</span> <span class="o">=</span> <span class="n">hits</span><span class="o">.</span><span class="n">get_column</span><span class="p">(</span><span class="s2">&quot;self_hits&quot;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">_normalize_row_slice</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
 
 <div class="viewcode-block" id="RangedSummarizedExperiment.get_slice">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.RangedSummarizedExperiment.RangedSummarizedExperiment.get_slice">[docs]</a>
@@ -1526,9 +1537,9 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=d7a12d57"></script>
-    <script src="../../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+</div><script src="../../_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>

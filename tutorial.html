@@ -5,11 +5,11 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Extending summarized experiments" href="extend_se.html"><link rel="prev" title="SummarizedExperiment" href="index.html">
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2025.12.19 -->
-        <title>Represent genomic experimental data - SummarizedExperiment 0.6.5 documentation</title>
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Represent genomic experimental data - SummarizedExperiment 0.7.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=8dab3a3b" />
     
     
@@ -162,7 +162,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">SummarizedExperiment 0.6.5 documentation</div></a>
+      <a href="index.html"><div class="brand">SummarizedExperiment 0.7.0 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -183,7 +183,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
-  <span class="sidebar-brand-text">SummarizedExperiment 0.6.5 documentation</span>
+  <span class="sidebar-brand-text">SummarizedExperiment 0.7.0 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -437,7 +437,7 @@ metadata(0):
     layers: &#39;counts&#39;
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.12/x64/lib/python3.12/functools.py:912: ImplicitModificationWarning: Transforming to str index.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/functools.py:912: ImplicitModificationWarning: Transforming to str index.
   return dispatch(args[0].__class__)(*args, **kw)
 </pre></div>
 </div>
@@ -466,15 +466,15 @@ metadata(0):
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>assay names (as property):  [&#39;counts&#39;]
 assay names (functional style):  [&#39;counts&#39;]
 BiocFrame with 200 rows and 6 columns
-      seqnames  starts    ends strand   score                  GC
-        &lt;list&gt; &lt;range&gt; &lt;range&gt; &lt;list&gt; &lt;range&gt;              &lt;list&gt;
-  [0]     chr1     100     110      -       0 0.30086469809411986
-  [1]     chr2     101     111      +       1  0.6963418348926022
-  [2]     chr2     102     112      +       2 0.39575877990140207
-           ...     ...     ...    ...     ...                 ...
-[197]     chr3     297     307      +     197  0.4122431766011416
-[198]     chr3     298     308      -     198   0.550088645547225
-[199]     chr3     299     309      -     199  0.6273138479836775
+      seqnames  starts    ends strand   score                 GC
+        &lt;list&gt; &lt;range&gt; &lt;range&gt; &lt;list&gt; &lt;range&gt;             &lt;list&gt;
+  [0]     chr1     100     110      -       0 0.9979888887436321
+  [1]     chr2     101     111      +       1 0.5579333535769802
+  [2]     chr2     102     112      +       2 0.2864680396741699
+           ...     ...     ...    ...     ...                ...
+[197]     chr3     297     307      +     197 0.5828889866103897
+[198]     chr3     298     308      -     198 0.3299246115673343
+[199]     chr3     299     309      -     199 0.8148910330941088
 </pre></div>
 </div>
 </div>
@@ -489,19 +489,19 @@ BiocFrame with 200 rows and 6 columns
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.59014965, 0.45866938, 0.90083385, 0.45352451, 0.81232544,
-        0.61451498],
-       [0.70103385, 0.92954438, 0.07796844, 0.35683615, 0.88819511,
-        0.53344513],
-       [0.08911861, 0.41984583, 0.59509055, 0.54220913, 0.12250226,
-        0.4039385 ],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.61613458, 0.94501837, 0.86396568, 0.56498725, 0.26932383,
+        0.68906055],
+       [0.29404263, 0.04463728, 0.44717789, 0.79401488, 0.87968442,
+        0.3261473 ],
+       [0.42243466, 0.57625466, 0.03914189, 0.54631692, 0.30328787,
+        0.27902701],
        ...,
-       [0.52044267, 0.05445626, 0.99548131, 0.68918559, 0.44019321,
-        0.2536417 ],
-       [0.14042224, 0.62918342, 0.23711379, 0.55006896, 0.61703929,
-        0.83332297],
-       [0.63433228, 0.67624038, 0.42202798, 0.39248778, 0.58439449,
-        0.47840267]], shape=(200, 6))
+       [0.00315252, 0.9868719 , 0.70926977, 0.03098476, 0.8500555 ,
+        0.18185521],
+       [0.34360764, 0.76168202, 0.63440217, 0.1650603 , 0.24499222,
+        0.53180143],
+       [0.58767236, 0.69235806, 0.93776631, 0.46680459, 0.80052686,
+        0.28011644]], shape=(200, 6))
 </pre></div>
 </div>
 </div>
@@ -881,7 +881,7 @@ column_names(3): [&#39;cell_4&#39;, &#39;cell_5&#39;, &#39;cell_6&#39;]
 metadata(1): seq_platform
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/SummarizedExperiment/SummarizedExperiment/.tox/docs/lib/python3.12/site-packages/summarizedexperiment/base.py:91: UserWarning: &#39;row_data&#39; does not contain unique &#39;row_names&#39;.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/SummarizedExperiment/SummarizedExperiment/.tox/docs/lib/python3.12/site-packages/summarizedexperiment/base.py:94: UserWarning: &#39;row_data&#39; does not contain unique &#39;row_names&#39;.
   warn(&quot;&#39;row_data&#39; does not contain unique &#39;row_names&#39;.&quot;, UserWarning)
 </pre></div>
 </div>
@@ -923,7 +923,7 @@ metadata(1): seq_platform
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (3, 6)
-assays(3): [&#39;counts&#39;, &#39;beta&#39;, &#39;lognorm&#39;]
+assays(3): [&#39;counts&#39;, &#39;lognorm&#39;, &#39;beta&#39;]
 row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
 row_names(3): [&#39;MYC&#39;, &#39;BRCA2&#39;, &#39;TPFK&#39;]
 column_data columns(3): [&#39;sample&#39;, &#39;disease&#39;, &#39;doublet_score&#39;]
@@ -1073,9 +1073,9 @@ metadata(0):
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=d7a12d57"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+</div><script src="_static/documentation_options.js?v=fe7df9b0"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
     </body>
 </html>
