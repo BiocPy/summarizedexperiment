@@ -995,11 +995,7 @@ class RangedSummarizedExperiment(SummarizedExperiment):
                     for col in gr.mcols.column_names:
                         range_dict[col] = gr.mcols.column(col)
 
-                range_bf = biocframe.BiocFrame(
-                    range_dict, 
-                    number_of_rows=len(gr), 
-                    row_names=gr.get_names()
-                )
+                range_bf = biocframe.BiocFrame(range_dict, number_of_rows=len(gr), row_names=gr.get_names())
 
                 if new_row_data is None or new_row_data.shape[0] == 0 or len(new_row_data.column_names) == 0:
                     new_row_data = range_bf
