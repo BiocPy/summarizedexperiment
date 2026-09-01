@@ -980,17 +980,29 @@ class RangedSummarizedExperiment(SummarizedExperiment):
                 import copy
 
                 if isinstance(self._row_ranges, CompressedGenomicRangesList):
-                    df = self._row_ranges.get_unlist_data().to_pandas()
+                    gr = self._row_ranges.get_unlist_data()
                 else:
-                    df = self._row_ranges.to_pandas()
+                    gr = self._row_ranges
 
-                range_bf = biocframe.BiocFrame.from_pandas(df)
-                if new_row_data is None or new_row_data.shape[0] == 0:
+                range_dict = {
+                    "seqnames": gr.get_seqnames(),
+                    "starts": gr.get_start(),
+                    "ends": gr.get_end(),
+                    "strand": gr.get_strand(as_type="list"),
+                }
+
+                if gr.mcols is not None:
+                    for col in gr.mcols.column_names:
+                        range_dict[col] = gr.mcols.column(col)
+
+                range_bf = biocframe.BiocFrame(range_dict, number_of_rows=len(gr), row_names=gr.get_names())
+
+                if new_row_data is None or new_row_data.shape[0] == 0 or len(new_row_data.column_names) == 0:
                     new_row_data = range_bf
                 else:
                     new_row_data = copy.copy(new_row_data)
                     for col in range_bf.column_names:
-                        new_row_data[col] = range_bf[col]
+                        new_row_data.set_column(col, range_bf.column(col), in_place=True)
             except Exception as e:
                 warn(f"Failed to transfer row_ranges to row_data: {e}", UserWarning)
 
