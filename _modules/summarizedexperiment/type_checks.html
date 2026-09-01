@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>summarizedexperiment.type_checks - SummarizedExperiment 0.7.0 documentation</title>
+        <title>summarizedexperiment.type_checks - SummarizedExperiment 0.7.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
@@ -161,7 +161,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SummarizedExperiment 0.7.0 documentation</div></a>
+      <a href="../../index.html"><div class="brand">SummarizedExperiment 0.7.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -182,7 +182,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
-  <span class="sidebar-brand-text">SummarizedExperiment 0.7.0 documentation</span>
+  <span class="sidebar-brand-text">SummarizedExperiment 0.7.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -238,23 +238,23 @@
 
 <span class="c1"># from .RangedSummarizedExperiment import RangedSummarizedExperiment</span>
 
-<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;jkanche, keviny2&quot;</span>
-<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;jkanche&quot;</span>
-<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;MIT&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">"jkanche, keviny2"</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">"jkanche"</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">"MIT"</span>
 
 
 <span class="c1"># def is_gr_or_rse(x: Union[GenomicRanges, RangedSummarizedExperiment]):</span>
-<span class="c1">#     &quot;&quot;&quot;Check if the object is either a `RangedSummarizedExperiment` or `GenomicRanges`.</span>
+<span class="c1">#     """Check if the object is either a `RangedSummarizedExperiment` or `GenomicRanges`.</span>
 
 <span class="c1">#     Args:</span>
 <span class="c1">#         x (Union[GenomicRanges, RangedSummarizedExperiment]): object to check.</span>
 
 <span class="c1">#     Raises:</span>
 <span class="c1">#         TypeError: object is not a `RangedSummarizedExperiment` or `GenomicRanges`.</span>
-<span class="c1">#     &quot;&quot;&quot;</span>
+<span class="c1">#     """</span>
 <span class="c1">#     if not (isinstance(x, RangedSummarizedExperiment) or isinstance(x, GenomicRanges)):</span>
 <span class="c1">#         raise TypeError(</span>
-<span class="c1">#             &quot;object is not a `RangedSummarizedExperiment` or `GenomicRanges`&quot;</span>
+<span class="c1">#             "object is not a `RangedSummarizedExperiment` or `GenomicRanges`"</span>
 <span class="c1">#         )</span>
 
 
@@ -278,7 +278,7 @@
 <div class="viewcode-block" id="is_matrix_like">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.type_checks.is_matrix_like">[docs]</a>
 <span class="k">def</span><span class="w"> </span><span class="nf">is_matrix_like</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Check if ``x`` is a `matrix`-like object.</span>
+<span class="w">    </span><span class="sd">"""Check if ``x`` is a `matrix`-like object.</span>
 
 <span class="sd">    Matrix must support the matrix protocol, has the `shape` property</span>
 <span class="sd">    and allows slicing by implementing the `__getitem__` dunder method.</span>
@@ -289,10 +289,10 @@
 
 <span class="sd">    Returns:</span>
 <span class="sd">        True if ``x``is matrix-like.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="c1"># TODO: this only work for python 3.8 and below.</span>
     <span class="c1"># return isinstance(x, MatrixProtocol)</span>
-    <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;__getitem__&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">&quot;shape&quot;</span><span class="p">)</span></div>
+    <span class="k">return</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">"__getitem__"</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="s2">"shape"</span><span class="p">)</span></div>
 
 </pre></div>
         </article>
@@ -326,7 +326,7 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=fe7df9b0"></script>
+</div><script src="../../_static/documentation_options.js?v=5a057da9"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>

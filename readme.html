@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>SummarizedExperiment - SummarizedExperiment 0.7.0 documentation</title>
+        <title>SummarizedExperiment - SummarizedExperiment 0.7.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
@@ -162,7 +162,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">SummarizedExperiment 0.7.0 documentation</div></a>
+      <a href="index.html"><div class="brand">SummarizedExperiment 0.7.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -183,7 +183,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
-  <span class="sidebar-brand-text">SummarizedExperiment 0.7.0 documentation</span>
+  <span class="sidebar-brand-text">SummarizedExperiment 0.7.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -273,30 +273,30 @@
 <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">)</span>
 <span class="n">row_data</span> <span class="o">=</span> <span class="n">BiocFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;seqnames&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;chr1&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr2&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr2&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr2&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr1&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr1&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr3&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr3&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr3&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr3&quot;</span><span class="p">,</span>
+        <span class="s2">"seqnames"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">"chr1"</span><span class="p">,</span>
+            <span class="s2">"chr2"</span><span class="p">,</span>
+            <span class="s2">"chr2"</span><span class="p">,</span>
+            <span class="s2">"chr2"</span><span class="p">,</span>
+            <span class="s2">"chr1"</span><span class="p">,</span>
+            <span class="s2">"chr1"</span><span class="p">,</span>
+            <span class="s2">"chr3"</span><span class="p">,</span>
+            <span class="s2">"chr3"</span><span class="p">,</span>
+            <span class="s2">"chr3"</span><span class="p">,</span>
+            <span class="s2">"chr3"</span><span class="p">,</span>
         <span class="p">]</span>
         <span class="o">*</span> <span class="mi">20</span><span class="p">,</span>
-        <span class="s2">&quot;starts&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
-        <span class="s2">&quot;ends&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="mi">310</span><span class="p">),</span>
-        <span class="s2">&quot;strand&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span>
-        <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
-        <span class="s2">&quot;GC&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">"starts"</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+        <span class="s2">"ends"</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="mi">310</span><span class="p">),</span>
+        <span class="s2">"strand"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"-"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">"score"</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+        <span class="s2">"GC"</span><span class="p">:</span> <span class="p">[</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 
 <span class="n">col_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;treatment&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ChIP&quot;</span><span class="p">,</span> <span class="s2">&quot;Input&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"treatment"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"ChIP"</span><span class="p">,</span> <span class="s2">"Input"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
@@ -305,18 +305,18 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">summarizedexperiment</span><span class="w"> </span><span class="kn">import</span> <span class="n">SummarizedExperiment</span>
 
 <span class="n">tse</span> <span class="o">=</span> <span class="n">SummarizedExperiment</span><span class="p">(</span>
-    <span class="n">assays</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="n">counts</span><span class="p">},</span> <span class="n">row_data</span><span class="o">=</span><span class="n">row_data</span><span class="p">,</span> <span class="n">column_data</span><span class="o">=</span><span class="n">col_data</span><span class="p">,</span>
-    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;seq_platform&quot;</span><span class="p">:</span> <span class="s2">&quot;Illumina NovaSeq 6000&quot;</span><span class="p">},</span>
+    <span class="n">assays</span><span class="o">=</span><span class="p">{</span><span class="s2">"counts"</span><span class="p">:</span> <span class="n">counts</span><span class="p">},</span> <span class="n">row_data</span><span class="o">=</span><span class="n">row_data</span><span class="p">,</span> <span class="n">column_data</span><span class="o">=</span><span class="n">col_data</span><span class="p">,</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"seq_platform"</span><span class="p">:</span> <span class="s2">"Illumina NovaSeq 6000"</span><span class="p">},</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## output
 class: SummarizedExperiment
 dimensions: (200, 6)
-assays(1): [&#39;counts&#39;]
-row_data columns(6): [&#39;seqnames&#39;, &#39;starts&#39;, &#39;ends&#39;, &#39;strand&#39;, &#39;score&#39;, &#39;GC&#39;]
+assays(1): ['counts']
+row_data columns(6): ['seqnames', 'starts', 'ends', 'strand', 'score', 'GC']
 row_names(0):
-column_data columns(1): [&#39;treatment&#39;]
+column_data columns(1): ['treatment']
 column_names(0):
 metadata(1): seq_platform
 </pre></div>
@@ -326,7 +326,7 @@ metadata(1): seq_platform
 <span class="kn">from</span><span class="w"> </span><span class="nn">genomicranges</span><span class="w"> </span><span class="kn">import</span> <span class="n">GenomicRanges</span>
 
 <span class="n">trse</span> <span class="o">=</span> <span class="n">RangedSummarizedExperiment</span><span class="p">(</span>
-    <span class="n">assays</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="n">counts</span><span class="p">},</span> <span class="n">row_data</span><span class="o">=</span><span class="n">row_data</span><span class="p">,</span>
+    <span class="n">assays</span><span class="o">=</span><span class="p">{</span><span class="s2">"counts"</span><span class="p">:</span> <span class="n">counts</span><span class="p">},</span> <span class="n">row_data</span><span class="o">=</span><span class="n">row_data</span><span class="p">,</span>
     <span class="n">row_ranges</span><span class="o">=</span><span class="n">GenomicRanges</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">row_data</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()),</span> <span class="n">column_data</span><span class="o">=</span><span class="n">col_data</span>
 <span class="p">)</span>
 </pre></div>
@@ -334,10 +334,10 @@ metadata(1): seq_platform
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>## output
 class: RangedSummarizedExperiment
 dimensions: (200, 6)
-assays(1): [&#39;counts&#39;]
-row_data columns(6): [&#39;seqnames&#39;, &#39;starts&#39;, &#39;ends&#39;, &#39;strand&#39;, &#39;score&#39;, &#39;GC&#39;]
+assays(1): ['counts']
+row_data columns(6): ['seqnames', 'starts', 'ends', 'strand', 'score', 'GC']
 row_names(0):
-column_data columns(1): [&#39;treatment&#39;]
+column_data columns(1): ['treatment']
 column_names(0):
 metadata(0):
 </pre></div>
@@ -404,7 +404,7 @@ information on PyScaffold see <a class="reference external" href="https://pyscaf
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=fe7df9b0"></script>
+</div><script src="_static/documentation_options.js?v=5a057da9"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>

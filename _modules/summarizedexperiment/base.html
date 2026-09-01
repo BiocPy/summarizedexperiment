@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>summarizedexperiment.base - SummarizedExperiment 0.7.0 documentation</title>
+        <title>summarizedexperiment.base - SummarizedExperiment 0.7.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
@@ -161,7 +161,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SummarizedExperiment 0.7.0 documentation</div></a>
+      <a href="../../index.html"><div class="brand">SummarizedExperiment 0.7.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -182,7 +182,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
-  <span class="sidebar-brand-text">SummarizedExperiment 0.7.0 documentation</span>
+  <span class="sidebar-brand-text">SummarizedExperiment 0.7.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -247,20 +247,20 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">._frameutils</span><span class="w"> </span><span class="kn">import</span> <span class="n">_sanitize_frame</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.type_checks</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_matrix_like</span>
 
-<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;jkanche, keviny2&quot;</span>
-<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;jkanche&quot;</span>
-<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;MIT&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">"jkanche, keviny2"</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">"jkanche"</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">"MIT"</span>
 
 <span class="n">SliceResult</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span>
-    <span class="s2">&quot;SlicerResult&quot;</span><span class="p">,</span>
+    <span class="s2">"SlicerResult"</span><span class="p">,</span>
     <span class="p">[</span>
-        <span class="s2">&quot;rows&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;columns&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;assays&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;row_names&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;column_names&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;row_indices&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;col_indices&quot;</span><span class="p">,</span>
+        <span class="s2">"rows"</span><span class="p">,</span>
+        <span class="s2">"columns"</span><span class="p">,</span>
+        <span class="s2">"assays"</span><span class="p">,</span>
+        <span class="s2">"row_names"</span><span class="p">,</span>
+        <span class="s2">"column_names"</span><span class="p">,</span>
+        <span class="s2">"row_indices"</span><span class="p">,</span>
+        <span class="s2">"col_indices"</span><span class="p">,</span>
     <span class="p">],</span>
 <span class="p">)</span>
 
@@ -270,8 +270,8 @@
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">_keys</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
         <span class="n">_first</span> <span class="o">=</span> <span class="n">_keys</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
         <span class="n">mat</span> <span class="o">=</span> <span class="n">assays</span><span class="p">[</span><span class="n">_first</span><span class="p">]</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="s2">&quot;shape&quot;</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Assay: &#39;</span><span class="si">{</span><span class="n">_first</span><span class="si">}</span><span class="s2">&#39; is not a supported matrix representation.&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="s2">"shape"</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Assay: '</span><span class="si">{</span><span class="n">_first</span><span class="si">}</span><span class="s2">' is not a supported matrix representation."</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">mat</span><span class="o">.</span><span class="n">shape</span>
 
     <span class="n">_r</span> <span class="o">=</span> <span class="mi">0</span>
@@ -291,15 +291,15 @@
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_validate_assays</span><span class="p">(</span><span class="n">assays</span><span class="p">,</span> <span class="n">shape</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">assays</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">assays</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>  <span class="c1"># or len(assays.keys()) == 0</span>
-        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;`assays` must be a dictionary and contain atleast one 2-dimensional matrix.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">"`assays` must be a dictionary and contain atleast one 2-dimensional matrix."</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">asy</span><span class="p">,</span> <span class="n">mat</span> <span class="ow">in</span> <span class="n">assays</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">is_matrix_like</span><span class="p">(</span><span class="n">mat</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Assay: &#39;</span><span class="si">{</span><span class="n">asy</span><span class="si">}</span><span class="s2">&#39; is not a supported matrix representation.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Assay: '</span><span class="si">{</span><span class="n">asy</span><span class="si">}</span><span class="s2">' is not a supported matrix representation."</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;Only 2-dimensional matrices are accepted, provided </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="si">}</span><span class="s2"> dimensions for `assay`: &#39;</span><span class="si">{</span><span class="n">asy</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+                <span class="sa">f</span><span class="s2">"Only 2-dimensional matrices are accepted, provided </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">mat</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span><span class="si">}</span><span class="s2"> dimensions for `assay`: '</span><span class="si">{</span><span class="n">asy</span><span class="si">}</span><span class="s2">'."</span>
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="n">shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -307,54 +307,54 @@
             <span class="k">continue</span>
 
         <span class="k">if</span> <span class="n">mat</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="n">shape</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Assay: &#39;</span><span class="si">{</span><span class="n">asy</span><span class="si">}</span><span class="s2">&#39; must be of shape &#39;</span><span class="si">{</span><span class="n">shape</span><span class="si">}</span><span class="s2">&#39; but provided &#39;</span><span class="si">{</span><span class="n">mat</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Assay: '</span><span class="si">{</span><span class="n">asy</span><span class="si">}</span><span class="s2">' must be of shape '</span><span class="si">{</span><span class="n">shape</span><span class="si">}</span><span class="s2">' but provided '</span><span class="si">{</span><span class="n">mat</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_validate_rows</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">biocframe</span><span class="o">.</span><span class="n">BiocFrame</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;row_data&#39; is not a `BiocFrame` object.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"'row_data' is not a `BiocFrame` object."</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">rows</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;Number of features (&#39;row_data&#39;) mismatch with number of rows in assays. Must be &#39;</span><span class="si">{</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot; but provided &#39;</span><span class="si">{</span><span class="n">rows</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+            <span class="sa">f</span><span class="s2">"Number of features ('row_data') mismatch with number of rows in assays. Must be '</span><span class="si">{</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">'"</span>
+            <span class="sa">f</span><span class="s2">" but provided '</span><span class="si">{</span><span class="n">rows</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">'."</span>
         <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">!=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;Length of &#39;row_names&#39; mismatch with number of rows. Must be &#39;</span><span class="si">{</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39; but provided &#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+                <span class="sa">f</span><span class="s2">"Length of 'row_names' mismatch with number of rows. Must be '</span><span class="si">{</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">' but provided '</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="si">}</span><span class="s2">'."</span>
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">names</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
-            <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&#39;row_data&#39; does not contain unique &#39;row_names&#39;.&quot;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
+            <span class="n">warn</span><span class="p">(</span><span class="s2">"'row_data' does not contain unique 'row_names'."</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_validate_cols</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">names</span><span class="p">,</span> <span class="n">shape</span><span class="p">):</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">biocframe</span><span class="o">.</span><span class="n">BiocFrame</span><span class="p">):</span>
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;&#39;column_data&#39; is not a `BiocFrame` object.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">"'column_data' is not a `BiocFrame` object."</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">cols</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;Number of samples (&#39;column_data&#39;) mismatch with number of columns in assays. Must be &#39;</span><span class="si">{</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
-            <span class="sa">f</span><span class="s2">&quot; but provided &#39;</span><span class="si">{</span><span class="n">cols</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+            <span class="sa">f</span><span class="s2">"Number of samples ('column_data') mismatch with number of columns in assays. Must be '</span><span class="si">{</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">'"</span>
+            <span class="sa">f</span><span class="s2">" but provided '</span><span class="si">{</span><span class="n">cols</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">'."</span>
         <span class="p">)</span>
 
     <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">!=</span> <span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="sa">f</span><span class="s2">&quot;Length of &#39;column_names&#39; mismatch with number of columns. Must be &#39;</span><span class="si">{</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&#39;&quot;</span>
-                <span class="sa">f</span><span class="s2">&quot; but provided &#39;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;.&quot;</span>
+                <span class="sa">f</span><span class="s2">"Length of 'column_names' mismatch with number of columns. Must be '</span><span class="si">{</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">'"</span>
+                <span class="sa">f</span><span class="s2">" but provided '</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="si">}</span><span class="s2">'."</span>
             <span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">names</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">):</span>
-            <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;&#39;column_data&#39; does not contain unique &#39;row_names&#39;.&quot;</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
+            <span class="n">warn</span><span class="p">(</span><span class="s2">"'column_data' does not contain unique 'row_names'."</span><span class="p">,</span> <span class="ne">UserWarning</span><span class="p">)</span>
 
 
 <div class="viewcode-block" id="BaseSE">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">BaseSE</span><span class="p">(</span><span class="n">ut</span><span class="o">.</span><span class="n">BiocObject</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Base class for ``SummarizedExperiment``. This class provides common properties and methods that can be utilized</span>
+<span class="w">    </span><span class="sd">"""Base class for ``SummarizedExperiment``. This class provides common properties and methods that can be utilized</span>
 <span class="sd">    across all derived classes.</span>
 
 <span class="sd">    This container represents genomic experiment data in the form of</span>
@@ -362,10 +362,10 @@
 <span class="sd">    and any other relevant ``metadata``.</span>
 
 <span class="sd">    If row_names are not provided, the row_names from row_data are used as</span>
-<span class="sd">    the experiment&#39;s row names. Similarly if column_names are not provided</span>
-<span class="sd">    the row_names of the column_data are used as the experiment&#39;s column</span>
+<span class="sd">    the experiment's row names. Similarly if column_names are not provided</span>
+<span class="sd">    the row_names of the column_data are used as the experiment's column</span>
 <span class="sd">    names.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
 <div class="viewcode-block" id="BaseSE.__init__">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.__init__">[docs]</a>
@@ -379,7 +379,7 @@
         <span class="n">metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">ut</span><span class="o">.</span><span class="n">NamedList</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">_validate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize an instance of ``BaseSE``.</span>
+<span class="w">        </span><span class="sd">"""Initialize an instance of ``BaseSE``.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            assays:</span>
@@ -430,7 +430,7 @@
 
 <span class="sd">            _validate:</span>
 <span class="sd">                Internal use only.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="n">_validate</span><span class="o">=</span><span class="n">_validate</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_assays</span> <span class="o">=</span> <span class="n">assays</span> <span class="k">if</span> <span class="n">assays</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">{}</span>
@@ -438,20 +438,20 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="o">=</span> <span class="n">_guess_assay_shape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_assays</span><span class="p">,</span> <span class="n">row_data</span><span class="p">,</span> <span class="n">column_data</span><span class="p">,</span> <span class="n">row_names</span><span class="p">,</span> <span class="n">column_names</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Failed to guess the &#39;shape&#39; from the provided parameters!&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Failed to guess the 'shape' from the provided parameters!"</span><span class="p">)</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span> <span class="o">=</span> <span class="n">_sanitize_frame</span><span class="p">(</span><span class="n">row_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span> <span class="o">=</span> <span class="n">_sanitize_frame</span><span class="p">(</span><span class="n">column_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 
         <span class="k">if</span> <span class="n">row_names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">row_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="n">row_names</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="p">,</span> <span class="s2">&quot;row_names&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">row_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="n">row_names</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="p">,</span> <span class="s2">"row_names"</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
 
         <span class="k">if</span> <span class="n">row_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">row_names</span><span class="p">,</span> <span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">):</span>
             <span class="n">row_names</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">(</span><span class="n">row_names</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span> <span class="o">=</span> <span class="n">row_names</span>
 
         <span class="k">if</span> <span class="n">column_names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">column_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="n">row_names</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="p">,</span> <span class="s2">&quot;row_names&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="n">column_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="n">row_names</span> <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="p">,</span> <span class="s2">"row_names"</span><span class="p">)</span> <span class="k">else</span> <span class="kc">None</span>
 
         <span class="k">if</span> <span class="n">column_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">column_names</span><span class="p">,</span> <span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">):</span>
             <span class="n">column_names</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">(</span><span class="n">column_names</span><span class="p">)</span>
@@ -461,7 +461,7 @@
             <span class="n">_validate_assays</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_assays</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;Cannot guess &#39;shape&#39; from assays!&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Cannot guess 'shape' from assays!"</span><span class="p">)</span>
 
             <span class="n">_validate_rows</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">)</span>
             <span class="n">_validate_cols</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">)</span></div>
@@ -474,10 +474,10 @@
 <div class="viewcode-block" id="BaseSE.__deepcopy__">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.__deepcopy__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">__deepcopy__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">memo</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">_nil</span><span class="o">=</span><span class="p">[]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            A deep copy of the current ``BaseSE``.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
 
         <span class="n">_assays_copy</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_assays</span><span class="p">)</span>
@@ -502,10 +502,10 @@
 <div class="viewcode-block" id="BaseSE.__copy__">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.__copy__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">__copy__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            A shallow copy of the current ``BaseSE``.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">current_class_const</span> <span class="o">=</span> <span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">current_class_const</span><span class="p">(</span>
             <span class="n">assays</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_assays</span><span class="p">,</span>
@@ -521,7 +521,7 @@
 <div class="viewcode-block" id="BaseSE.copy">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.copy">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">copy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~__copy__`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~__copy__`."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__copy__</span><span class="p">()</span></div>
 
 
@@ -532,33 +532,33 @@
 <div class="viewcode-block" id="BaseSE.__len__">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.__len__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            Number of rows.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">shape</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get shape of the experiment.</span>
+<span class="w">        </span><span class="sd">"""Get shape of the experiment.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Tuple[int, int]: A tuple (m,n),</span>
 <span class="sd">            where `m` is the number of features/rows, and</span>
 <span class="sd">            `n` is the number of samples/columns.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">dims</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias to :py:attr:`~summarizedexperiment.BaseSE.BaseSE.shape`.</span>
+<span class="w">        </span><span class="sd">"""Alias to :py:attr:`~summarizedexperiment.BaseSE.BaseSE.shape`.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Tuple[int, int]: A tuple (m,n),</span>
 <span class="sd">            where `m` is the number of features/rows, and</span>
 <span class="sd">            `n` is the number of samples/columns.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span>
 
     <span class="c1">##########################</span>
@@ -568,51 +568,51 @@
 <div class="viewcode-block" id="BaseSE.__repr__">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.__repr__">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            A string representation.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(number_of_rows=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;, number_of_columns=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;, assays=&quot;</span> <span class="o">+</span> <span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">assay_names</span><span class="p">)</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;, row_data=&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;, column_data=&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+<span class="sd">        """</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(number_of_rows=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">", number_of_columns=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">"</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="s2">", assays="</span> <span class="o">+</span> <span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">assay_names</span><span class="p">)</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="s2">", row_data="</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="s2">", column_data="</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="fm">__repr__</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;, row_names=&quot;</span> <span class="o">+</span> <span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">", row_names="</span> <span class="o">+</span> <span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;, column_names=&quot;</span> <span class="o">+</span> <span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">", column_names="</span> <span class="o">+</span> <span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;, metadata=&quot;</span> <span class="o">+</span> <span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="p">)</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s2">", metadata="</span> <span class="o">+</span> <span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_metadata</span><span class="p">)</span>
 
-        <span class="n">output</span> <span class="o">+=</span> <span class="s2">&quot;)&quot;</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="s2">")"</span>
         <span class="k">return</span> <span class="n">output</span></div>
 
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            A pretty-printed string containing the contents of this object.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;class: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="sd">        """</span>
+        <span class="n">output</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"class: </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
 
-        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;dimensions: (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"dimensions: (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">)</span><span class="se">\n</span><span class="s2">"</span>
 
-        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;assays(</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">assay_names</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">assay_names</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-
-        <span class="n">output</span> <span class="o">+=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;row_data columns(</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="n">column_names</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="n">column_names</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
-        <span class="p">)</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;row_names(</span><span class="si">{</span><span class="mi">0</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="w"> </span><span class="ow">is</span><span class="w"> </span><span class="kc">None</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="w"> </span><span class="ow">is</span><span class="w"> </span><span class="kc">None</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"assays(</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">assay_names</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">assay_names</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
 
         <span class="n">output</span> <span class="o">+=</span> <span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;column_data columns(</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="n">column_names</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="n">column_names</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+            <span class="sa">f</span><span class="s2">"row_data columns(</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="n">column_names</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="n">column_names</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
         <span class="p">)</span>
-        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;column_names(</span><span class="si">{</span><span class="mi">0</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="w"> </span><span class="ow">is</span><span class="w"> </span><span class="kc">None</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="w"> </span><span class="ow">is</span><span class="w"> </span><span class="kc">None</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"row_names(</span><span class="si">{</span><span class="mi">0</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="w"> </span><span class="ow">is</span><span class="w"> </span><span class="kc">None</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="s1">' '</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="w"> </span><span class="ow">is</span><span class="w"> </span><span class="kc">None</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
 
-        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;metadata(</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">))</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="n">include_brackets</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="w"> </span><span class="n">transform</span><span class="o">=</span><span class="k">lambda</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"column_data columns(</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="n">column_names</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="n">column_names</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+        <span class="p">)</span>
+        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"column_names(</span><span class="si">{</span><span class="mi">0</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="w"> </span><span class="ow">is</span><span class="w"> </span><span class="kc">None</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="p">)</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="s1">' '</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="w"> </span><span class="ow">is</span><span class="w"> </span><span class="kc">None</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">"</span>
+
+        <span class="n">output</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"metadata(</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="p">))</span><span class="si">}</span><span class="s2">): </span><span class="si">{</span><span class="n">ut</span><span class="o">.</span><span class="n">print_truncated_list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">metadata</span><span class="o">.</span><span class="n">keys</span><span class="p">()),</span><span class="w"> </span><span class="n">sep</span><span class="o">=</span><span class="s1">' '</span><span class="p">,</span><span class="w"> </span><span class="n">include_brackets</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="w"> </span><span class="n">transform</span><span class="o">=</span><span class="k">lambda</span><span class="w"> </span><span class="n">y</span><span class="p">:</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span>
 
         <span class="k">return</span> <span class="n">output</span>
 
@@ -623,19 +623,19 @@
 <div class="viewcode-block" id="BaseSE.get_assays">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.get_assays">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_assays</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Access assays/experimental data.</span>
+<span class="w">        </span><span class="sd">"""Access assays/experimental data.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            A dictionary with keys as assay names and value</span>
 <span class="sd">            the experimental data.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assays</span></div>
 
 
 <div class="viewcode-block" id="BaseSE.set_assays">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.set_assays">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">set_assays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">assays</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">in_place</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set new experiment data (assays).</span>
+<span class="w">        </span><span class="sd">"""Set new experiment data (assays).</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            assays:</span>
@@ -647,7 +647,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            A modified ``BaseSE`` object, either as a copy of the original</span>
 <span class="sd">            or as a reference to the (in-place-modified) original.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">_validate_assays</span><span class="p">(</span><span class="n">assays</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">)</span>
         <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_define_output</span><span class="p">(</span><span class="n">in_place</span><span class="p">)</span>
@@ -657,17 +657,17 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">assays</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~get_assays`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~get_assays`."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_assays</span><span class="p">()</span>
 
     <span class="nd">@assays</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">assays</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">assays</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_assays` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_assays` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;assays&#39; is an in-place operation, use &#39;set_assays&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'assays' is an in-place operation, use 'set_assays' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_assays</span><span class="p">(</span><span class="n">assays</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -679,18 +679,18 @@
 <div class="viewcode-block" id="BaseSE.get_row_data">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.get_row_data">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_row_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">replace_row_names</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">biocframe</span><span class="o">.</span><span class="n">BiocFrame</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get features, the `row_names` of row_data are replaced by the row_names from the experiment.</span>
+<span class="w">        </span><span class="sd">"""Get features, the `row_names` of row_data are replaced by the row_names from the experiment.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            replace_row_names:</span>
-<span class="sd">                Whether to replace `row_data`&#39;s row_names with the row_names</span>
+<span class="sd">                Whether to replace `row_data`'s row_names with the row_names</span>
 <span class="sd">                from the experiment.</span>
 
 <span class="sd">                Defaults to True.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Feature information.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">_row_copy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="n">replace_row_names</span><span class="p">:</span>
@@ -707,7 +707,7 @@
         <span class="n">replace_row_names</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">in_place</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set new feature information.</span>
+<span class="w">        </span><span class="sd">"""Set new feature information.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            rows:</span>
@@ -718,7 +718,7 @@
 <span class="sd">                object is created.</span>
 
 <span class="sd">            replace_row_names:</span>
-<span class="sd">                Whether to replace experiment&#39;s row_names with the names from the</span>
+<span class="sd">                Whether to replace experiment's row_names with the names from the</span>
 <span class="sd">                new object. Defaults to False.</span>
 
 <span class="sd">            in_place:</span>
@@ -727,7 +727,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            A modified ``BaseSE`` object, either as a copy of the original</span>
 <span class="sd">            or as a reference to the (in-place-modified) original.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">rows</span> <span class="o">=</span> <span class="n">_sanitize_frame</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
         <span class="n">_validate_rows</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">)</span>
 
@@ -742,34 +742,34 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">rowdata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~get_rowdata`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~get_rowdata`."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_row_data</span><span class="p">()</span>
 
     <span class="nd">@rowdata</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">rowdata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">biocframe</span><span class="o">.</span><span class="n">BiocFrame</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_rowdata` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_rowdata` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;rowdata&#39; is an in-place operation, use &#39;set_rowdata&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'rowdata' is an in-place operation, use 'set_rowdata' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_row_data</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">row_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~get_rowdata`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~get_rowdata`."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_row_data</span><span class="p">()</span>
 
     <span class="nd">@row_data</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">row_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rows</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">biocframe</span><span class="o">.</span><span class="n">BiocFrame</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_rowdata` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_rowdata` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;rowdata&#39; is an in-place operation, use &#39;set_rowdata&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'rowdata' is an in-place operation, use 'set_rowdata' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_row_data</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -781,18 +781,18 @@
 <div class="viewcode-block" id="BaseSE.get_column_data">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.get_column_data">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_column_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">replace_row_names</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">biocframe</span><span class="o">.</span><span class="n">BiocFrame</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get sample data.</span>
+<span class="w">        </span><span class="sd">"""Get sample data.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            replace_row_names:</span>
-<span class="sd">                Whether to replace `column_data`&#39;s row_names with the</span>
+<span class="sd">                Whether to replace `column_data`'s row_names with the</span>
 <span class="sd">                row_names from the experiment.</span>
 
 <span class="sd">                Defaults to True.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Sample information.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">_col_copy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="n">replace_row_names</span><span class="p">:</span>
@@ -809,7 +809,7 @@
         <span class="n">replace_column_names</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
         <span class="n">in_place</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set sample data.</span>
+<span class="w">        </span><span class="sd">"""Set sample data.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            cols:</span>
@@ -820,7 +820,7 @@
 <span class="sd">                object is created.</span>
 
 <span class="sd">            replace_column_names:</span>
-<span class="sd">                Whether to replace experiment&#39;s column_names with the names from the</span>
+<span class="sd">                Whether to replace experiment's column_names with the names from the</span>
 <span class="sd">                new object. Defaults to False.</span>
 
 <span class="sd">            in_place:</span>
@@ -829,7 +829,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            A modified ``BaseSE`` object, either as a copy of the original</span>
 <span class="sd">            or as a reference to the (in-place-modified) original.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">cols</span> <span class="o">=</span> <span class="n">_sanitize_frame</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
         <span class="n">_validate_cols</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_shape</span><span class="p">)</span>
 
@@ -844,68 +844,68 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">columndata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~get_coldata`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~get_coldata`."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_column_data</span><span class="p">()</span>
 
     <span class="nd">@columndata</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">columndata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">biocframe</span><span class="o">.</span><span class="n">BiocFrame</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_coldata` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_coldata` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;coldata&#39; is an in-place operation, use &#39;set_columndata&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'coldata' is an in-place operation, use 'set_columndata' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_column_data</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">coldata</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~get_coldata`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~get_coldata`."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_column_data</span><span class="p">()</span>
 
     <span class="nd">@coldata</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">coldata</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">biocframe</span><span class="o">.</span><span class="n">BiocFrame</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_coldata` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_coldata` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;coldata&#39; is an in-place operation, use &#39;set_columndata&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'coldata' is an in-place operation, use 'set_columndata' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_column_data</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">column_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~get_coldata`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~get_coldata`."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_column_data</span><span class="p">()</span>
 
     <span class="nd">@column_data</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">column_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">biocframe</span><span class="o">.</span><span class="n">BiocFrame</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_coldata` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_coldata` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;coldata&#39; is an in-place operation, use &#39;set_coldata&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'coldata' is an in-place operation, use 'set_coldata' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_column_data</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">col_data</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~get_coldata`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~get_coldata`."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_column_data</span><span class="p">()</span>
 
     <span class="nd">@col_data</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">col_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cols</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">biocframe</span><span class="o">.</span><span class="n">BiocFrame</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_coldata` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_coldata` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;coldata&#39; is an in-place operation, use &#39;set_columndata&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'coldata' is an in-place operation, use 'set_columndata' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_column_data</span><span class="p">(</span><span class="n">cols</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -917,17 +917,17 @@
 <div class="viewcode-block" id="BaseSE.get_row_names">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.get_row_names">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_row_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            List of row names, or None if no row names are available.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_row_names</span></div>
 
 
 <div class="viewcode-block" id="BaseSE.set_row_names">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.set_row_names">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">set_row_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">in_place</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set new row names.</span>
+<span class="w">        </span><span class="sd">"""Set new row names.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            names:</span>
@@ -941,7 +941,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            A modified ``BaseSE`` object, either as a copy of the original</span>
 <span class="sd">            or as a reference to the (in-place-modified) original.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">):</span>
             <span class="n">names</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 
@@ -954,34 +954,34 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:attr:`~get_row_names`, provided for back-compatibility.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:attr:`~get_row_names`, provided for back-compatibility."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_row_names</span><span class="p">()</span>
 
     <span class="nd">@rownames</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">rownames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_row_names` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_row_names` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;row_names&#39; is an in-place operation, use &#39;set_row_names&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'row_names' is an in-place operation, use 'set_row_names' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_row_names</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">row_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:attr:`~get_row_names`, provided for back-compatibility.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:attr:`~get_row_names`, provided for back-compatibility."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_row_names</span><span class="p">()</span>
 
     <span class="nd">@row_names</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">row_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_row_names` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_row_names` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;row_names&#39; is an in-place operation, use &#39;set_row_names&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'row_names' is an in-place operation, use 'set_row_names' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_row_names</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -993,17 +993,17 @@
 <div class="viewcode-block" id="BaseSE.get_column_names">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.get_column_names">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_column_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""</span>
 <span class="sd">        Returns:</span>
 <span class="sd">            List of column names, or None if no column names are available.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_column_names</span></div>
 
 
 <div class="viewcode-block" id="BaseSE.set_column_names">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.set_column_names">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">set_column_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">in_place</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set new column names.</span>
+<span class="w">        </span><span class="sd">"""Set new column names.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            names:</span>
@@ -1017,7 +1017,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            A modified ``BaseSE`` object, either as a copy of the original</span>
 <span class="sd">            or as a reference to the (in-place-modified) original.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">):</span>
             <span class="n">names</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
 
@@ -1030,68 +1030,68 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">columnnames</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:attr:`~get_column_names`, provided for back-compatibility.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:attr:`~get_column_names`, provided for back-compatibility."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_column_names</span><span class="p">()</span>
 
     <span class="nd">@columnnames</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">columnnames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_column_names` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_column_names` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;column_names&#39; is an in-place operation, use &#39;set_column_names&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'column_names' is an in-place operation, use 'set_column_names' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_column_names</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">colnames</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:attr:`~get_column_names`, provided for back-compatibility.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:attr:`~get_column_names`, provided for back-compatibility."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_column_names</span><span class="p">()</span>
 
     <span class="nd">@colnames</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">colnames</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_column_names` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_column_names` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;column_names&#39; is an in-place operation, use &#39;set_column_names&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'column_names' is an in-place operation, use 'set_column_names' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_column_names</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">col_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:attr:`~get_column_names`, provided for back-compatibility.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:attr:`~get_column_names`, provided for back-compatibility."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_column_names</span><span class="p">()</span>
 
     <span class="nd">@col_names</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">col_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_column_names` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_column_names` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;column_names&#39; is an in-place operation, use &#39;set_column_names&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'column_names' is an in-place operation, use 'set_column_names' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_column_names</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">column_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ut</span><span class="o">.</span><span class="n">Names</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:attr:`~get_column_names`, provided for back-compatibility.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:attr:`~get_column_names`, provided for back-compatibility."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_column_names</span><span class="p">()</span>
 
     <span class="nd">@column_names</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">column_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~set_column_names` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~set_column_names` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;column_names&#39; is an in-place operation, use &#39;set_column_names&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'column_names' is an in-place operation, use 'set_column_names' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_column_names</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1103,18 +1103,18 @@
 <div class="viewcode-block" id="BaseSE.get_assay_names">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.get_assay_names">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_assay_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get assay names.</span>
+<span class="w">        </span><span class="sd">"""Get assay names.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            List of assay names.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">assays</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span></div>
 
 
 <div class="viewcode-block" id="BaseSE.set_assay_names">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.set_assay_names">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">set_assay_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">in_place</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Replace :py:attr:`~summarizedexperiment.BaseSE.BaseSE.assays`&#39;s names.</span>
+<span class="w">        </span><span class="sd">"""Replace :py:attr:`~summarizedexperiment.BaseSE.BaseSE.assays`'s names.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            names:</span>
@@ -1126,10 +1126,10 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            A modified ``BaseSE`` object, either as a copy of the original</span>
 <span class="sd">            or as a reference to the (in-place-modified) original.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">current_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">assay_names</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">current_names</span><span class="p">):</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Length of &#39;names&#39; does not match the number of `assays`.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Length of 'names' does not match the number of `assays`."</span><span class="p">)</span>
 
         <span class="n">new_assays</span> <span class="o">=</span> <span class="n">OrderedDict</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">idx</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)):</span>
@@ -1142,17 +1142,17 @@
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">assay_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:attr:`~get_assay_names`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:attr:`~get_assay_names`."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_assay_names</span><span class="p">()</span>
 
     <span class="nd">@assay_names</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">assay_names</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:attr:`~set_assay_names` with ``in_place = True``.</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:attr:`~set_assay_names` with ``in_place = True``.</span>
 
 <span class="sd">        As this mutates the original object, a warning is raised.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">warn</span><span class="p">(</span>
-            <span class="s2">&quot;Setting property &#39;assay_names&#39; is an in-place operation, use &#39;set_assay_names&#39; instead&quot;</span><span class="p">,</span>
+            <span class="s2">"Setting property 'assay_names' is an in-place operation, use 'set_assay_names' instead"</span><span class="p">,</span>
             <span class="ne">UserWarning</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">set_assay_names</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -1164,7 +1164,7 @@
 <div class="viewcode-block" id="BaseSE.get_assay">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.get_assay">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_assay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">assay</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Convenience method to access an :py:attr:`~summarizedexperiment.BaseSE.BaseSE.assays` by name or index.</span>
+<span class="w">        </span><span class="sd">"""Convenience method to access an :py:attr:`~summarizedexperiment.BaseSE.BaseSE.assays` by name or index.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            assay:</span>
@@ -1178,35 +1178,35 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Experiment data.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">assay</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">assay</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Index cannot be negative.&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">"Index cannot be negative."</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">assay</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_assay_names</span><span class="p">()):</span>
-                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;Index greater than the number of assays.&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">"Index greater than the number of assays."</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">assays</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_assay_names</span><span class="p">()[</span><span class="n">assay</span><span class="p">]]</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">assay</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">assay</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assays</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Assay: </span><span class="si">{</span><span class="n">assay</span><span class="si">}</span><span class="s2"> does not exist.&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Assay: </span><span class="si">{</span><span class="n">assay</span><span class="si">}</span><span class="s2"> does not exist."</span><span class="p">)</span>
 
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_assays</span><span class="p">[</span><span class="n">assay</span><span class="p">]</span>
 
-        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;assay&#39; must be a string or integer, provided &#39;</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">assay</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;.&quot;</span><span class="p">)</span></div>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"'assay' must be a string or integer, provided '</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">assay</span><span class="p">)</span><span class="si">}</span><span class="s2">'."</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="BaseSE.assay">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.assay">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">assay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">assay</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:attr:`~assay`. For backwards compatibility&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:attr:`~assay`. For backwards compatibility"""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_assay</span><span class="p">(</span><span class="n">assay</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="BaseSE.set_assay">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.set_assay">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">set_assay</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">],</span> <span class="n">assay</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">in_place</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Add or replace :py:attr:`~summarizedexperiment.BaseSE.BaseSE.assays`&#39;s.</span>
+<span class="w">        </span><span class="sd">"""Add or replace :py:attr:`~summarizedexperiment.BaseSE.BaseSE.assays`'s.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            name:</span>
@@ -1232,9 +1232,9 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            A modified ``BaseSE`` object, either as a copy of the original</span>
 <span class="sd">            or as a reference to the (in-place-modified) original.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">if</span> <span class="n">assay</span><span class="o">.</span><span class="n">shape</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">shape</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Provided assay does not match the dimensions of the experiment.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Provided assay does not match the dimensions of the experiment."</span><span class="p">)</span>
 
         <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_define_output</span><span class="p">(</span><span class="n">in_place</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">in_place</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
@@ -1242,16 +1242,16 @@
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
             <span class="k">if</span> <span class="n">name</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">output</span><span class="o">.</span><span class="n">_assays</span><span class="p">):</span>
-                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">&quot;&#39;name&#39; is greather than the number of assays.&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">IndexError</span><span class="p">(</span><span class="s2">"'name' is greather than the number of assays."</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="n">name</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;name&#39; cannot be less than 0.&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'name' cannot be less than 0."</span><span class="p">)</span>
 
             <span class="n">output</span><span class="o">.</span><span class="n">_assays</span><span class="p">[</span><span class="n">output</span><span class="o">.</span><span class="n">get_assay_names</span><span class="p">()[</span><span class="n">name</span><span class="p">]]</span> <span class="o">=</span> <span class="n">assay</span>
         <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
             <span class="n">output</span><span class="o">.</span><span class="n">_assays</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">assay</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;name&#39; must be either a string or an index value.&quot;</span><span class="p">)</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'name' must be either a string or an index value."</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">output</span></div>
 
 
@@ -1280,7 +1280,7 @@
         <span class="n">rows</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">]],</span>
         <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">]],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Subset all assays by the slice defined by rows and columns.</span>
+<span class="w">        </span><span class="sd">"""Subset all assays by the slice defined by rows and columns.</span>
 
 <span class="sd">        If both ``row_indices`` and ``col_indices`` are None, a shallow copy of the</span>
 <span class="sd">        current assays is returned.</span>
@@ -1302,10 +1302,10 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Sliced experiment data.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">if</span> <span class="n">rows</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">columns</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;No slice is provided, this returns a copy of all assays!&quot;</span><span class="p">)</span>
+            <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">"No slice is provided, this returns a copy of all assays!"</span><span class="p">)</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">assays</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="n">rows</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -1335,7 +1335,7 @@
         <span class="n">rows</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">]],</span>
         <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">]],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SliceResult</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Slice ``SummarizedExperiment`` along the rows and/or columns, based on their indices or names.</span>
+<span class="w">        </span><span class="sd">"""Slice ``SummarizedExperiment`` along the rows and/or columns, based on their indices or names.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            rows:</span>
@@ -1355,7 +1355,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            The sliced tuple containing the new rows, columns, assays and realized indices</span>
 <span class="sd">            for use in downstream methods.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="n">new_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_data</span>
         <span class="n">new_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">column_data</span>
@@ -1394,7 +1394,7 @@
         <span class="n">rows</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">]],</span>
         <span class="n">columns</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">]],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:attr:`~__getitem__`, for back-compatibility.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:attr:`~__getitem__`, for back-compatibility."""</span>
 
         <span class="n">slicer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_generic_slice</span><span class="p">(</span><span class="n">rows</span><span class="o">=</span><span class="n">rows</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
 
@@ -1415,7 +1415,7 @@
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">args</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">],</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Subset a ``SummarizedExperiment``.</span>
+<span class="w">        </span><span class="sd">"""Subset a ``SummarizedExperiment``.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            args:</span>
@@ -1436,20 +1436,20 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            Same type as caller with the sliced rows and columns.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_slice</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">args</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;At least one slicing argument must be provided.&quot;</span><span class="p">)</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"At least one slicing argument must be provided."</span><span class="p">)</span>
 
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_slice</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
             <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_slice</span><span class="p">(</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">args</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;`</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">` only supports 2-dimensional slicing.&quot;</span><span class="p">)</span></div>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"`</span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">` only supports 2-dimensional slicing."</span><span class="p">)</span></div>
 
 
     <span class="c1">################################</span>
@@ -1459,11 +1459,11 @@
 <div class="viewcode-block" id="BaseSE.to_anndata">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.to_anndata">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_anndata</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Transform :py:class:`~BaseSE`-like into a :py:class:`~anndata.AnnData` representation.</span>
+<span class="w">        </span><span class="sd">"""Transform :py:class:`~BaseSE`-like into a :py:class:`~anndata.AnnData` representation.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            An ``AnnData`` representation of the experiment.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">anndata</span><span class="w"> </span><span class="kn">import</span> <span class="n">AnnData</span>
         <span class="kn">from</span><span class="w"> </span><span class="nn">delayedarray</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
             <span class="n">DelayedArray</span><span class="p">,</span>
@@ -1477,14 +1477,14 @@
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> <span class="n">DelayedArray</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">mat</span><span class="p">),</span> <span class="n">DelayedArray</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">is_sparse</span><span class="p">(</span><span class="n">mat</span><span class="p">):</span>
                     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                        <span class="s2">&quot;Converting delayedarray into sparse, may require more memory&quot;</span><span class="p">,</span>
+                        <span class="s2">"Converting delayedarray into sparse, may require more memory"</span><span class="p">,</span>
                         <span class="ne">RuntimeWarning</span><span class="p">,</span>
                     <span class="p">)</span>
 
                     <span class="n">mat</span> <span class="o">=</span> <span class="n">to_scipy_sparse_matrix</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
-                        <span class="s2">&quot;Converting delayedarray into dense, may require more memory&quot;</span><span class="p">,</span>
+                        <span class="s2">"Converting delayedarray into dense, may require more memory"</span><span class="p">,</span>
                         <span class="ne">RuntimeWarning</span><span class="p">,</span>
                     <span class="p">)</span>
                     <span class="n">mat</span> <span class="o">=</span> <span class="n">to_dense_array</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
@@ -1519,7 +1519,7 @@
 <div class="viewcode-block" id="BaseSE.get_column_data_column">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.get_column_data_column">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_column_data_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Access a column from the ``column_data``.</span>
+<span class="w">        </span><span class="sd">"""Access a column from the ``column_data``.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            column:</span>
@@ -1527,14 +1527,14 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            The content of the column.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="n">get_column</span><span class="p">(</span><span class="n">column</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="BaseSE.set_column_data_column">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.set_column_data_column">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">set_column_data_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">in_place</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set or replace a column in ``column_data``.</span>
+<span class="w">        </span><span class="sd">"""Set or replace a column in ``column_data``.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            column:</span>
@@ -1549,7 +1549,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            A modified ``BaseSE`` object, either as a copy of the original</span>
 <span class="sd">            or as a reference to the (in-place-modified) original.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_define_output</span><span class="p">(</span><span class="n">in_place</span><span class="p">)</span>
         <span class="n">output</span><span class="o">.</span><span class="n">_cols</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">_cols</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="n">in_place</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">output</span></div>
@@ -1558,7 +1558,7 @@
 <div class="viewcode-block" id="BaseSE.get_row_data_column">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.get_row_data_column">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">get_row_data_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Access a column from the ``row_data``.</span>
+<span class="w">        </span><span class="sd">"""Access a column from the ``row_data``.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            column:</span>
@@ -1566,14 +1566,14 @@
 
 <span class="sd">        Returns:</span>
 <span class="sd">            The content of the column.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="n">get_column</span><span class="p">(</span><span class="n">column</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="BaseSE.set_row_data_column">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.base.BaseSE.set_row_data_column">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">set_row_data_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">,</span> <span class="n">in_place</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BaseSE</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Set or replace a column in ``row_data``.</span>
+<span class="w">        </span><span class="sd">"""Set or replace a column in ``row_data``.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            column:</span>
@@ -1588,7 +1588,7 @@
 <span class="sd">        Returns:</span>
 <span class="sd">            A modified ``BaseSE`` object, either as a copy of the original</span>
 <span class="sd">            or as a reference to the (in-place-modified) original.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
         <span class="n">output</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_define_output</span><span class="p">(</span><span class="n">in_place</span><span class="p">)</span>
         <span class="n">output</span><span class="o">.</span><span class="n">_rows</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">_rows</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">in_place</span><span class="o">=</span><span class="n">in_place</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">output</span></div>
@@ -1626,7 +1626,7 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=fe7df9b0"></script>
+</div><script src="../../_static/documentation_options.js?v=5a057da9"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>

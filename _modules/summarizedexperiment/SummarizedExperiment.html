@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html"><link rel="search" title="Search" href="../../search.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>summarizedexperiment.SummarizedExperiment - SummarizedExperiment 0.7.0 documentation</title>
+        <title>summarizedexperiment.SummarizedExperiment - SummarizedExperiment 0.7.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
@@ -161,7 +161,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">SummarizedExperiment 0.7.0 documentation</div></a>
+      <a href="../../index.html"><div class="brand">SummarizedExperiment 0.7.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -182,7 +182,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
-  <span class="sidebar-brand-text">SummarizedExperiment 0.7.0 documentation</span>
+  <span class="sidebar-brand-text">SummarizedExperiment 0.7.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -252,19 +252,19 @@
 <span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">BaseSE</span>
 
-<span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;jkanche&quot;</span>
-<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">&quot;jkanche&quot;</span>
-<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;MIT&quot;</span>
+<span class="n">__author__</span> <span class="o">=</span> <span class="s2">"jkanche"</span>
+<span class="n">__copyright__</span> <span class="o">=</span> <span class="s2">"jkanche"</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">"MIT"</span>
 
 
 <div class="viewcode-block" id="SummarizedExperiment">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.SummarizedExperiment">[docs]</a>
 <span class="k">class</span><span class="w"> </span><span class="nc">SummarizedExperiment</span><span class="p">(</span><span class="n">BaseSE</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Container to represents genomic experiment data (`assays`), features (`row_data`), sample data (`column_data`)</span>
+<span class="w">    </span><span class="sd">"""Container to represents genomic experiment data (`assays`), features (`row_data`), sample data (`column_data`)</span>
 <span class="sd">    and any other `metadata`.</span>
 
 <span class="sd">    SummarizedExperiment follows the R/Bioconductor specification; rows are features, columns are samples.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
 
 <div class="viewcode-block" id="SummarizedExperiment.__init__">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.SummarizedExperiment.__init__">[docs]</a>
@@ -278,7 +278,7 @@
         <span class="n">metadata</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">ut</span><span class="o">.</span><span class="n">NamedList</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">_validate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Initialize a Summarized Experiment (SE).</span>
+<span class="w">        </span><span class="sd">"""Initialize a Summarized Experiment (SE).</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            assays:</span>
@@ -329,10 +329,10 @@
 
 <span class="sd">            _validate:</span>
 <span class="sd">                Internal use only.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">row_data</span><span class="p">,</span> <span class="n">GenomicRanges</span><span class="p">):</span>
-            <span class="n">warn</span><span class="p">(</span><span class="s2">&quot;`row_data` is `GenomicRanges`, consider using `RangeSummarizedExperiment`.&quot;</span><span class="p">)</span>
+            <span class="n">warn</span><span class="p">(</span><span class="s2">"`row_data` is `GenomicRanges`, consider using `RangeSummarizedExperiment`."</span><span class="p">)</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
             <span class="n">assays</span><span class="p">,</span>
@@ -352,28 +352,28 @@
 <div class="viewcode-block" id="SummarizedExperiment.relaxed_combine_rows">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.SummarizedExperiment.relaxed_combine_rows">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">relaxed_combine_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SummarizedExperiment</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wrapper around :py:func:`~relaxed_combine_rows`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Wrapper around :py:func:`~relaxed_combine_rows`."""</span>
         <span class="k">return</span> <span class="n">relaxed_combine_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SummarizedExperiment.relaxed_combine_columns">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.SummarizedExperiment.relaxed_combine_columns">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">relaxed_combine_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SummarizedExperiment</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wrapper around :py:func:`~relaxed_combine_columns`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Wrapper around :py:func:`~relaxed_combine_columns`."""</span>
         <span class="k">return</span> <span class="n">relaxed_combine_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SummarizedExperiment.combine_rows">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.SummarizedExperiment.combine_rows">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">combine_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SummarizedExperiment</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wrapper around :py:func:`~combine_rows`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Wrapper around :py:func:`~combine_rows`."""</span>
         <span class="k">return</span> <span class="n">combine_rows</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="SummarizedExperiment.combine_columns">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.SummarizedExperiment.combine_columns">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">combine_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SummarizedExperiment</span><span class="p">:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Wrapper around :py:func:`~combine_columns`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Wrapper around :py:func:`~combine_columns`."""</span>
         <span class="k">return</span> <span class="n">combine_columns</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">other</span><span class="p">)</span></div>
 
 
@@ -384,7 +384,7 @@
 <div class="viewcode-block" id="SummarizedExperiment.to_rangedsummarizedexperiment">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.SummarizedExperiment.to_rangedsummarizedexperiment">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_rangedsummarizedexperiment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row_ranges</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Coerce to :py:class:`summarizedexperiment.RangedSummarizedExperiment.RangedSummarizedExperiment`.</span>
+<span class="w">        </span><span class="sd">"""Coerce to :py:class:`summarizedexperiment.RangedSummarizedExperiment.RangedSummarizedExperiment`.</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            row_ranges:</span>
@@ -392,16 +392,16 @@
 <span class="sd">                the matrices in assays.</span>
 
 <span class="sd">                If ``row_ranges`` is not provided, this method will attempt to</span>
-<span class="sd">                extract range information (e.g., &#39;seqnames&#39;, &#39;starts&#39;) from</span>
+<span class="sd">                extract range information (e.g., 'seqnames', 'starts') from</span>
 <span class="sd">                ``row_data`` to construct the :py:class:`~genomicranges.GenomicRanges.GenomicRanges`.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">        """</span>
 
         <span class="kn">from</span><span class="w"> </span><span class="nn">.RangedSummarizedExperiment</span><span class="w"> </span><span class="kn">import</span> <span class="n">RangedSummarizedExperiment</span>
 
         <span class="k">if</span> <span class="n">row_ranges</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">try</span><span class="p">:</span>
                 <span class="n">rd_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_data</span><span class="o">.</span><span class="n">get_column_names</span><span class="p">()</span>
-                <span class="k">if</span> <span class="s2">&quot;seqnames&quot;</span> <span class="ow">in</span> <span class="n">rd_cols</span> <span class="ow">and</span> <span class="s2">&quot;starts&quot;</span> <span class="ow">in</span> <span class="n">rd_cols</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">"seqnames"</span> <span class="ow">in</span> <span class="n">rd_cols</span> <span class="ow">and</span> <span class="s2">"starts"</span> <span class="ow">in</span> <span class="n">rd_cols</span><span class="p">:</span>
                     <span class="n">df</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">row_data</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">()</span>
                     <span class="n">row_ranges</span> <span class="o">=</span> <span class="n">GenomicRanges</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
             <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">_</span><span class="p">:</span>
@@ -422,7 +422,7 @@
 <div class="viewcode-block" id="SummarizedExperiment.to_rse">
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.SummarizedExperiment.to_rse">[docs]</a>
     <span class="k">def</span><span class="w"> </span><span class="nf">to_rse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">row_ranges</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :py:meth:`~to_rangedsummarizedexperiment`.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">"""Alias for :py:meth:`~to_rangedsummarizedexperiment`."""</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_rangedsummarizedexperiment</span><span class="p">(</span><span class="n">row_ranges</span><span class="o">=</span><span class="n">row_ranges</span><span class="p">)</span></div>
 </div>
 
@@ -437,18 +437,18 @@
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.combine_rows">[docs]</a>
 <span class="nd">@ut</span><span class="o">.</span><span class="n">combine_rows</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">SummarizedExperiment</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">combine_rows</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">:</span> <span class="n">SummarizedExperiment</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SummarizedExperiment</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Combine multiple ``SummarizedExperiment`` objects by row.</span>
+<span class="w">    </span><span class="sd">"""Combine multiple ``SummarizedExperiment`` objects by row.</span>
 
 <span class="sd">    All assays must contain the same assay names. If you need a</span>
 <span class="sd">    flexible combine operation, checkout :py:func:`~relaxed_combine_rows`.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A combined ``SummarizedExperiment``.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">first</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">_all_assays</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">assays</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
     <span class="n">check_assays_are_equal</span><span class="p">(</span><span class="n">_all_assays</span><span class="p">)</span>
-    <span class="n">_new_assays</span> <span class="o">=</span> <span class="n">merge_assays</span><span class="p">(</span><span class="n">_all_assays</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">)</span>
+    <span class="n">_new_assays</span> <span class="o">=</span> <span class="n">merge_assays</span><span class="p">(</span><span class="n">_all_assays</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">"row"</span><span class="p">)</span>
 
     <span class="n">_all_rows</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">_rows</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
     <span class="n">_new_rows</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">combine_rows</span><span class="p">(</span><span class="o">*</span><span class="n">_all_rows</span><span class="p">)</span>
@@ -470,18 +470,18 @@
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.combine_columns">[docs]</a>
 <span class="nd">@ut</span><span class="o">.</span><span class="n">combine_columns</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">SummarizedExperiment</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">combine_columns</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">:</span> <span class="n">SummarizedExperiment</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SummarizedExperiment</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Combine multiple ``SummarizedExperiment`` objects by column.</span>
+<span class="w">    </span><span class="sd">"""Combine multiple ``SummarizedExperiment`` objects by column.</span>
 
 <span class="sd">    All assays must contain the same assay names. If you need a</span>
 <span class="sd">    flexible combine operation, checkout :py:func:`~relaxed_combine_columns`.</span>
 
 <span class="sd">    Returns:</span>
 <span class="sd">        A combined ``SummarizedExperiment``.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">first</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">_all_assays</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">assays</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
     <span class="n">check_assays_are_equal</span><span class="p">(</span><span class="n">_all_assays</span><span class="p">)</span>
-    <span class="n">_new_assays</span> <span class="o">=</span> <span class="n">merge_assays</span><span class="p">(</span><span class="n">_all_assays</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;column&quot;</span><span class="p">)</span>
+    <span class="n">_new_assays</span> <span class="o">=</span> <span class="n">merge_assays</span><span class="p">(</span><span class="n">_all_assays</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">"column"</span><span class="p">)</span>
 
     <span class="n">_all_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">_cols</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
     <span class="n">_new_cols</span> <span class="o">=</span> <span class="n">ut</span><span class="o">.</span><span class="n">combine_rows</span><span class="p">(</span><span class="o">*</span><span class="n">_all_cols</span><span class="p">)</span>
@@ -503,7 +503,7 @@
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.relaxed_combine_rows">[docs]</a>
 <span class="nd">@ut</span><span class="o">.</span><span class="n">relaxed_combine_rows</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">SummarizedExperiment</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">relaxed_combine_rows</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">:</span> <span class="n">SummarizedExperiment</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SummarizedExperiment</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A relaxed version of the :py:func:`~biocutils.combine_rows.combine_rows` method for</span>
+<span class="w">    </span><span class="sd">"""A relaxed version of the :py:func:`~biocutils.combine_rows.combine_rows` method for</span>
 <span class="sd">    :py:class:`~SummarizedExperiment` objects.  Whereas ``combine_rows`` expects that all objects have the same columns,</span>
 <span class="sd">    ``relaxed_combine_rows`` allows for different columns. Absent columns in any object are filled in with appropriate</span>
 <span class="sd">    placeholder values before combining.</span>
@@ -517,9 +517,9 @@
 <span class="sd">        A ``SummarizedExperiment`` that combines all ``experiments`` along their rows and contains</span>
 <span class="sd">        the union of all columns. Columns absent in any ``x`` are filled in</span>
 <span class="sd">        with placeholders consisting of Nones or masked NumPy values.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">first</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">_new_assays</span> <span class="o">=</span> <span class="n">relaxed_merge_assays</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;row&quot;</span><span class="p">)</span>
+    <span class="n">_new_assays</span> <span class="o">=</span> <span class="n">relaxed_merge_assays</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">"row"</span><span class="p">)</span>
 
     <span class="n">_all_rows</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">_rows</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
     <span class="n">_new_rows</span> <span class="o">=</span> <span class="n">biocframe</span><span class="o">.</span><span class="n">relaxed_combine_rows</span><span class="p">(</span><span class="o">*</span><span class="n">_all_rows</span><span class="p">)</span>
@@ -541,7 +541,7 @@
 <a class="viewcode-back" href="../../api/summarizedexperiment.html#summarizedexperiment.SummarizedExperiment.relaxed_combine_columns">[docs]</a>
 <span class="nd">@ut</span><span class="o">.</span><span class="n">relaxed_combine_columns</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">SummarizedExperiment</span><span class="p">)</span>
 <span class="k">def</span><span class="w"> </span><span class="nf">relaxed_combine_columns</span><span class="p">(</span><span class="o">*</span><span class="n">x</span><span class="p">:</span> <span class="n">SummarizedExperiment</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">SummarizedExperiment</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A relaxed version of the :py:func:`~biocutils.combine_rows.combine_columns` method for</span>
+<span class="w">    </span><span class="sd">"""A relaxed version of the :py:func:`~biocutils.combine_rows.combine_columns` method for</span>
 <span class="sd">    :py:class:`~SummarizedExperiment` objects.  Whereas ``combine_columns`` expects that all objects have the same rows,</span>
 <span class="sd">    ``relaxed_combine_columns`` allows for different rows. Absent columns in any object are filled in with appropriate</span>
 <span class="sd">    placeholder values before combining.</span>
@@ -555,9 +555,9 @@
 <span class="sd">        A ``SummarizedExperiment`` that combines all ``experiments`` along their columns and contains</span>
 <span class="sd">        the union of all rows. Rows absent in any ``x`` are filled in</span>
 <span class="sd">        with placeholders consisting of Nones or masked NumPy values.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd">    """</span>
     <span class="n">first</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">_new_assays</span> <span class="o">=</span> <span class="n">relaxed_merge_assays</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">&quot;column&quot;</span><span class="p">)</span>
+    <span class="n">_new_assays</span> <span class="o">=</span> <span class="n">relaxed_merge_assays</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s2">"column"</span><span class="p">)</span>
 
     <span class="n">_all_cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">y</span><span class="o">.</span><span class="n">_cols</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
     <span class="n">_new_cols</span> <span class="o">=</span> <span class="n">biocframe</span><span class="o">.</span><span class="n">relaxed_combine_rows</span><span class="p">(</span><span class="o">*</span><span class="n">_all_cols</span><span class="p">)</span>
@@ -615,7 +615,7 @@
       
     </aside>
   </div>
-</div><script src="../../_static/documentation_options.js?v=fe7df9b0"></script>
+</div><script src="../../_static/documentation_options.js?v=5a057da9"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/scripts/furo.js?v=46bd48cc"></script>

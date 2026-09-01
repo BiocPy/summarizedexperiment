@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html"><link rel="search" title="Search" href="search.html"><link rel="next" title="Extending summarized experiments" href="extend_se.html"><link rel="prev" title="SummarizedExperiment" href="index.html">
 
     <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
-        <title>Represent genomic experimental data - SummarizedExperiment 0.7.0 documentation</title>
+        <title>Represent genomic experimental data - SummarizedExperiment 0.7.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=7bdb33bb" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
@@ -162,7 +162,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">SummarizedExperiment 0.7.0 documentation</div></a>
+      <a href="index.html"><div class="brand">SummarizedExperiment 0.7.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -183,7 +183,7 @@
       
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
-  <span class="sidebar-brand-text">SummarizedExperiment 0.7.0 documentation</span>
+  <span class="sidebar-brand-text">SummarizedExperiment 0.7.1 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -286,30 +286,30 @@
 <span class="n">counts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="n">nrows</span><span class="p">,</span> <span class="n">ncols</span><span class="p">)</span>
 <span class="n">row_data</span> <span class="o">=</span> <span class="n">BiocFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;seqnames&quot;</span><span class="p">:</span> <span class="p">[</span>
-            <span class="s2">&quot;chr1&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr2&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr2&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr2&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr1&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr1&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr3&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr3&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr3&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;chr3&quot;</span><span class="p">,</span>
+        <span class="s2">"seqnames"</span><span class="p">:</span> <span class="p">[</span>
+            <span class="s2">"chr1"</span><span class="p">,</span>
+            <span class="s2">"chr2"</span><span class="p">,</span>
+            <span class="s2">"chr2"</span><span class="p">,</span>
+            <span class="s2">"chr2"</span><span class="p">,</span>
+            <span class="s2">"chr1"</span><span class="p">,</span>
+            <span class="s2">"chr1"</span><span class="p">,</span>
+            <span class="s2">"chr3"</span><span class="p">,</span>
+            <span class="s2">"chr3"</span><span class="p">,</span>
+            <span class="s2">"chr3"</span><span class="p">,</span>
+            <span class="s2">"chr3"</span><span class="p">,</span>
         <span class="p">]</span>
         <span class="o">*</span> <span class="mi">20</span><span class="p">,</span>
-        <span class="s2">&quot;starts&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
-        <span class="s2">&quot;ends&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="mi">310</span><span class="p">),</span>
-        <span class="s2">&quot;strand&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;+&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span>
-        <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
-        <span class="s2">&quot;GC&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">"starts"</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">300</span><span class="p">),</span>
+        <span class="s2">"ends"</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="mi">310</span><span class="p">),</span>
+        <span class="s2">"strand"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"-"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">,</span> <span class="s2">"*"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"+"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">,</span> <span class="s2">"-"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span>
+        <span class="s2">"score"</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+        <span class="s2">"GC"</span><span class="p">:</span> <span class="p">[</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span> <span class="o">*</span> <span class="mi">20</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 
 <span class="n">col_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;treatment&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;ChIP&quot;</span><span class="p">,</span> <span class="s2">&quot;Input&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s2">"treatment"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"ChIP"</span><span class="p">,</span> <span class="s2">"Input"</span><span class="p">]</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
     <span class="p">}</span>
 <span class="p">)</span>
 </pre></div>
@@ -328,7 +328,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">summarizedexperiment</span><span class="w"> </span><span class="kn">import</span> <span class="n">SummarizedExperiment</span>
 
 <span class="n">se</span> <span class="o">=</span> <span class="n">SummarizedExperiment</span><span class="p">(</span>
-    <span class="n">assays</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="n">counts</span><span class="p">},</span> <span class="n">row_data</span><span class="o">=</span><span class="n">row_data</span><span class="p">,</span> <span class="n">column_data</span><span class="o">=</span><span class="n">col_data</span>
+    <span class="n">assays</span><span class="o">=</span><span class="p">{</span><span class="s2">"counts"</span><span class="p">:</span> <span class="n">counts</span><span class="p">},</span> <span class="n">row_data</span><span class="o">=</span><span class="n">row_data</span><span class="p">,</span> <span class="n">column_data</span><span class="o">=</span><span class="n">col_data</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">se</span><span class="p">)</span>
@@ -338,11 +338,11 @@
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (200, 6)
-assays(1): [&#39;counts&#39;]
-row_data columns(6): [&#39;seqnames&#39;, &#39;starts&#39;, &#39;ends&#39;, &#39;strand&#39;, &#39;score&#39;, &#39;GC&#39;]
+assays(1): ['counts']
+row_data columns(6): ['seqnames', 'starts', 'ends', 'strand', 'score', 'GC']
 row_names(0):  
-column_data columns(1): [&#39;treatment&#39;]
-column_names(6): [&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]
+column_data columns(1): ['treatment']
+column_names(6): ['0', '1', '2', '3', '4', '5']
 metadata(0): 
 </pre></div>
 </div>
@@ -360,7 +360,7 @@ metadata(0):
 <span class="n">gr</span> <span class="o">=</span> <span class="n">GenomicRanges</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">row_data</span><span class="o">.</span><span class="n">to_pandas</span><span class="p">())</span>
 
 <span class="n">rse</span> <span class="o">=</span> <span class="n">RangedSummarizedExperiment</span><span class="p">(</span>
-    <span class="n">assays</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="n">counts</span><span class="p">},</span> <span class="n">row_data</span><span class="o">=</span><span class="n">row_data</span><span class="p">,</span> <span class="n">row_ranges</span><span class="o">=</span><span class="n">gr</span><span class="p">,</span> <span class="n">column_data</span><span class="o">=</span><span class="n">col_data</span>
+    <span class="n">assays</span><span class="o">=</span><span class="p">{</span><span class="s2">"counts"</span><span class="p">:</span> <span class="n">counts</span><span class="p">},</span> <span class="n">row_data</span><span class="o">=</span><span class="n">row_data</span><span class="p">,</span> <span class="n">row_ranges</span><span class="o">=</span><span class="n">gr</span><span class="p">,</span> <span class="n">column_data</span><span class="o">=</span><span class="n">col_data</span>
 <span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">rse</span><span class="p">)</span>
 </pre></div>
@@ -369,11 +369,11 @@ metadata(0):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: RangedSummarizedExperiment
 dimensions: (200, 6)
-assays(1): [&#39;counts&#39;]
-row_data columns(6): [&#39;seqnames&#39;, &#39;starts&#39;, &#39;ends&#39;, &#39;strand&#39;, &#39;score&#39;, &#39;GC&#39;]
+assays(1): ['counts']
+row_data columns(6): ['seqnames', 'starts', 'ends', 'strand', 'score', 'GC']
 row_names(0):  
-column_data columns(1): [&#39;treatment&#39;]
-column_names(6): [&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]
+column_data columns(1): ['treatment']
+column_names(6): ['0', '1', '2', '3', '4', '5']
 metadata(0): 
 </pre></div>
 </div>
@@ -401,7 +401,7 @@ metadata(0):
 <span class="n">transformed</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">log1p</span><span class="p">(</span><span class="n">normalized</span><span class="p">)</span>
 
 <span class="kn">import</span><span class="w"> </span><span class="nn">summarizedexperiment</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">SE</span>
-<span class="n">se_delayed</span> <span class="o">=</span> <span class="n">SE</span><span class="o">.</span><span class="n">SummarizedExperiment</span><span class="p">({</span> <span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="n">filtered</span><span class="p">,</span> <span class="s2">&quot;lognorm&quot;</span><span class="p">:</span> <span class="n">transformed</span> <span class="p">})</span>
+<span class="n">se_delayed</span> <span class="o">=</span> <span class="n">SE</span><span class="o">.</span><span class="n">SummarizedExperiment</span><span class="p">({</span> <span class="s2">"counts"</span><span class="p">:</span> <span class="n">filtered</span><span class="p">,</span> <span class="s2">"lognorm"</span><span class="p">:</span> <span class="n">transformed</span> <span class="p">})</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">se_delayed</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -409,7 +409,7 @@ metadata(0):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (50, 7)
-assays(2): [&#39;counts&#39;, &#39;lognorm&#39;]
+assays(2): ['counts', 'lognorm']
 row_data columns(0): []
 row_names(0):  
 column_data columns(0): []
@@ -432,12 +432,12 @@ metadata(0):
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>AnnData object with n_obs × n_vars = 6 × 200
-    obs: &#39;treatment&#39;, &#39;rownames&#39;
-    var: &#39;seqnames&#39;, &#39;starts&#39;, &#39;ends&#39;, &#39;strand&#39;, &#39;score&#39;, &#39;GC&#39;
-    layers: &#39;counts&#39;
+    obs: 'treatment', 'rownames'
+    var: 'seqnames', 'starts', 'ends', 'strand', 'score', 'GC'
+    layers: 'counts'
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.13/x64/lib/python3.12/functools.py:912: ImplicitModificationWarning: Transforming to str index.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/hostedtoolcache/Python/3.12.14/x64/lib/python3.12/functools.py:912: ImplicitModificationWarning: Transforming to str index.
   return dispatch(args[0].__class__)(*args, **kw)
 </pre></div>
 </div>
@@ -454,8 +454,8 @@ metadata(0):
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># access assay names</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;assay names (as property): &quot;</span><span class="p">,</span> <span class="n">se</span><span class="o">.</span><span class="n">assay_names</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;assay names (functional style): &quot;</span><span class="p">,</span> <span class="n">se</span><span class="o">.</span><span class="n">get_assay_names</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"assay names (as property): "</span><span class="p">,</span> <span class="n">se</span><span class="o">.</span><span class="n">assay_names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">"assay names (functional style): "</span><span class="p">,</span> <span class="n">se</span><span class="o">.</span><span class="n">get_assay_names</span><span class="p">())</span>
 
 <span class="c1"># access row data</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">se</span><span class="o">.</span><span class="n">row_data</span><span class="p">)</span>
@@ -463,18 +463,18 @@ metadata(0):
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>assay names (as property):  [&#39;counts&#39;]
-assay names (functional style):  [&#39;counts&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>assay names (as property):  ['counts']
+assay names (functional style):  ['counts']
 BiocFrame with 200 rows and 6 columns
-      seqnames  starts    ends strand   score                 GC
-        &lt;list&gt; &lt;range&gt; &lt;range&gt; &lt;list&gt; &lt;range&gt;             &lt;list&gt;
-  [0]     chr1     100     110      -       0 0.9979888887436321
-  [1]     chr2     101     111      +       1 0.5579333535769802
-  [2]     chr2     102     112      +       2 0.2864680396741699
-           ...     ...     ...    ...     ...                ...
-[197]     chr3     297     307      +     197 0.5828889866103897
-[198]     chr3     298     308      -     198 0.3299246115673343
-[199]     chr3     299     309      -     199 0.8148910330941088
+      seqnames  starts    ends strand   score                   GC
+        &lt;list&gt; &lt;range&gt; &lt;range&gt; &lt;list&gt; &lt;range&gt;               &lt;list&gt;
+  [0]     chr1     100     110      -       0   0.2354445487027068
+  [1]     chr2     101     111      +       1  0.42972852233591585
+  [2]     chr2     102     112      +       2   0.5313036701458399
+           ...     ...     ...    ...     ...                  ...
+[197]     chr3     297     307      +     197   0.7173917271573451
+[198]     chr3     298     308      -     198 0.039547949573864205
+[199]     chr3     299     309      -     199   0.4816366090625973
 </pre></div>
 </div>
 </div>
@@ -484,24 +484,24 @@ BiocFrame with 200 rows and 6 columns
 <p>One can access an assay by index or name:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">se</span><span class="o">.</span><span class="n">assay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># same as se.assay(&quot;counts&quot;)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">se</span><span class="o">.</span><span class="n">assay</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># same as se.assay("counts")</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.61613458, 0.94501837, 0.86396568, 0.56498725, 0.26932383,
-        0.68906055],
-       [0.29404263, 0.04463728, 0.44717789, 0.79401488, 0.87968442,
-        0.3261473 ],
-       [0.42243466, 0.57625466, 0.03914189, 0.54631692, 0.30328787,
-        0.27902701],
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.22252198, 0.27149355, 0.08780103, 0.89765647, 0.64177348,
+        0.68484968],
+       [0.09998224, 0.57118691, 0.2285695 , 0.50460976, 0.00954059,
+        0.72627903],
+       [0.25240344, 0.67247802, 0.47768841, 0.71130844, 0.12176789,
+        0.56039758],
        ...,
-       [0.00315252, 0.9868719 , 0.70926977, 0.03098476, 0.8500555 ,
-        0.18185521],
-       [0.34360764, 0.76168202, 0.63440217, 0.1650603 , 0.24499222,
-        0.53180143],
-       [0.58767236, 0.69235806, 0.93776631, 0.46680459, 0.80052686,
-        0.28011644]], shape=(200, 6))
+       [0.259367  , 0.50547502, 0.60268403, 0.0718614 , 0.123258  ,
+        0.32854699],
+       [0.62354608, 0.43794684, 0.93050454, 0.07125042, 0.95326655,
+        0.63622646],
+       [0.29349173, 0.29944039, 0.16933846, 0.56143073, 0.06610467,
+        0.13261077]], shape=(200, 6))
 </pre></div>
 </div>
 </div>
@@ -515,7 +515,7 @@ BiocFrame with 200 rows and 6 columns
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modified_column_data</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="n">column_data</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s2">&quot;score&quot;</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">16</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">modified_column_data</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="n">column_data</span><span class="o">.</span><span class="n">set_column</span><span class="p">(</span><span class="s2">"score"</span><span class="p">,</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">16</span><span class="p">))</span>
 <span class="n">modified_se</span> <span class="o">=</span> <span class="n">se</span><span class="o">.</span><span class="n">set_column_data</span><span class="p">(</span><span class="n">modified_column_data</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">modified_se</span><span class="p">)</span>
 </pre></div>
@@ -524,11 +524,11 @@ BiocFrame with 200 rows and 6 columns
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (200, 6)
-assays(1): [&#39;counts&#39;]
-row_data columns(6): [&#39;seqnames&#39;, &#39;starts&#39;, &#39;ends&#39;, &#39;strand&#39;, &#39;score&#39;, &#39;GC&#39;]
+assays(1): ['counts']
+row_data columns(6): ['seqnames', 'starts', 'ends', 'strand', 'score', 'GC']
 row_names(0):  
-column_data columns(2): [&#39;treatment&#39;, &#39;score&#39;]
-column_names(6): [&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]
+column_data columns(2): ['treatment', 'score']
+column_names(6): ['0', '1', '2', '3', '4', '5']
 metadata(0): 
 </pre></div>
 </div>
@@ -564,27 +564,27 @@ metadata(0):
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">row_data</span> <span class="o">=</span> <span class="n">BiocFrame</span><span class="p">({</span>
-    <span class="s2">&quot;seqnames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;chr_5&quot;</span><span class="p">,</span> <span class="s2">&quot;chr_3&quot;</span><span class="p">,</span> <span class="s2">&quot;chr_2&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span>
-    <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">310</span><span class="p">],</span>
+    <span class="s2">"seqnames"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"chr_5"</span><span class="p">,</span> <span class="s2">"chr_3"</span><span class="p">,</span> <span class="s2">"chr_2"</span><span class="p">],</span>
+    <span class="s2">"start"</span><span class="p">:</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span>
+    <span class="s2">"end"</span><span class="p">:</span> <span class="p">[</span><span class="mi">110</span><span class="p">,</span> <span class="mi">210</span><span class="p">,</span> <span class="mi">310</span><span class="p">],</span>
 <span class="p">})</span>
 
 <span class="n">col_data</span> <span class="o">=</span> <span class="n">BiocFrame</span><span class="p">({</span>
-    <span class="s2">&quot;sample&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;SAM_1&quot;</span><span class="p">,</span> <span class="s2">&quot;SAM_3&quot;</span><span class="p">,</span> <span class="s2">&quot;SAM_3&quot;</span><span class="p">],</span>
-    <span class="s2">&quot;disease&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;True&quot;</span><span class="p">,</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span> <span class="s2">&quot;True&quot;</span><span class="p">],</span>
+    <span class="s2">"sample"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"SAM_1"</span><span class="p">,</span> <span class="s2">"SAM_3"</span><span class="p">,</span> <span class="s2">"SAM_3"</span><span class="p">],</span>
+    <span class="s2">"disease"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"True"</span><span class="p">,</span> <span class="s2">"True"</span><span class="p">,</span> <span class="s2">"True"</span><span class="p">],</span>
     <span class="p">},</span>
-    <span class="n">row_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cell_1&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_2&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_3&quot;</span><span class="p">],</span>
+    <span class="n">row_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"cell_1"</span><span class="p">,</span> <span class="s2">"cell_2"</span><span class="p">,</span> <span class="s2">"cell_3"</span><span class="p">],</span>
 <span class="p">)</span>
 
 <span class="n">se_with_names</span> <span class="o">=</span> <span class="n">SummarizedExperiment</span><span class="p">(</span>
     <span class="n">assays</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
-        <span class="s2">&quot;lognorm&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+        <span class="s2">"counts"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+        <span class="s2">"lognorm"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
     <span class="p">},</span>
     <span class="n">row_data</span><span class="o">=</span><span class="n">row_data</span><span class="p">,</span>
     <span class="n">column_data</span><span class="o">=</span><span class="n">col_data</span><span class="p">,</span>
-    <span class="n">row_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;HER2&quot;</span><span class="p">,</span> <span class="s2">&quot;BRCA1&quot;</span><span class="p">,</span> <span class="s2">&quot;TPFK&quot;</span><span class="p">],</span>
-    <span class="n">column_names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cell_1&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_2&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_3&quot;</span><span class="p">],</span>
+    <span class="n">row_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"HER2"</span><span class="p">,</span> <span class="s2">"BRCA1"</span><span class="p">,</span> <span class="s2">"TPFK"</span><span class="p">],</span>
+    <span class="n">column_names</span><span class="o">=</span><span class="p">[</span><span class="s2">"cell_1"</span><span class="p">,</span> <span class="s2">"cell_2"</span><span class="p">,</span> <span class="s2">"cell_3"</span><span class="p">],</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">se_with_names</span><span class="p">)</span>
@@ -594,11 +594,11 @@ metadata(0):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (3, 3)
-assays(2): [&#39;counts&#39;, &#39;lognorm&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(3): [&#39;HER2&#39;, &#39;BRCA1&#39;, &#39;TPFK&#39;]
-column_data columns(2): [&#39;sample&#39;, &#39;disease&#39;]
-column_names(3): [&#39;cell_1&#39;, &#39;cell_2&#39;, &#39;cell_3&#39;]
+assays(2): ['counts', 'lognorm']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(3): ['HER2', 'BRCA1', 'TPFK']
+column_data columns(2): ['sample', 'disease']
+column_names(3): ['cell_1', 'cell_2', 'cell_3']
 metadata(0): 
 </pre></div>
 </div>
@@ -617,11 +617,11 @@ metadata(0):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (3, 3)
-assays(2): [&#39;counts&#39;, &#39;lognorm&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(3): [&#39;HER2&#39;, &#39;BRCA1&#39;, &#39;TPFK&#39;]
-column_data columns(2): [&#39;sample&#39;, &#39;disease&#39;]
-column_names(3): [&#39;cell_1&#39;, &#39;cell_2&#39;, &#39;cell_3&#39;]
+assays(2): ['counts', 'lognorm']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(3): ['HER2', 'BRCA1', 'TPFK']
+column_data columns(2): ['sample', 'disease']
+column_names(3): ['cell_1', 'cell_2', 'cell_3']
 metadata(0): 
 </pre></div>
 </div>
@@ -633,7 +633,7 @@ metadata(0):
 <p>Either one or both of the slices can contain names. These names are mapped to <code class="docutils literal notranslate"><span class="pre">row_names</span></code> and <code class="docutils literal notranslate"><span class="pre">column_names</span></code> of the <code class="docutils literal notranslate"><span class="pre">SummarizedExperiment</span></code> object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subset_se</span> <span class="o">=</span> <span class="n">se_with_names</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;cell_1&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_3&quot;</span><span class="p">]]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subset_se</span> <span class="o">=</span> <span class="n">se_with_names</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">[</span><span class="s2">"cell_1"</span><span class="p">,</span> <span class="s2">"cell_3"</span><span class="p">]]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">subset_se</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -641,11 +641,11 @@ metadata(0):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (2, 2)
-assays(2): [&#39;counts&#39;, &#39;lognorm&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(2): [&#39;HER2&#39;, &#39;BRCA1&#39;]
-column_data columns(2): [&#39;sample&#39;, &#39;disease&#39;]
-column_names(2): [&#39;cell_1&#39;, &#39;cell_3&#39;]
+assays(2): ['counts', 'lognorm']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(2): ['HER2', 'BRCA1']
+column_data columns(2): ['sample', 'disease']
+column_names(2): ['cell_1', 'cell_3']
 metadata(0): 
 </pre></div>
 </div>
@@ -670,11 +670,11 @@ metadata(0):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (2, 2)
-assays(2): [&#39;counts&#39;, &#39;lognorm&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(2): [&#39;HER2&#39;, &#39;BRCA1&#39;]
-column_data columns(2): [&#39;sample&#39;, &#39;disease&#39;]
-column_names(2): [&#39;cell_1&#39;, &#39;cell_3&#39;]
+assays(2): ['counts', 'lognorm']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(2): ['HER2', 'BRCA1']
+column_data columns(2): ['sample', 'disease']
+column_names(2): ['cell_1', 'cell_3']
 metadata(0): 
 </pre></div>
 </div>
@@ -698,10 +698,10 @@ metadata(0):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (2, 0)
-assays(2): [&#39;counts&#39;, &#39;lognorm&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(2): [&#39;HER2&#39;, &#39;BRCA1&#39;]
-column_data columns(2): [&#39;sample&#39;, &#39;disease&#39;]
+assays(2): ['counts', 'lognorm']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(2): ['HER2', 'BRCA1']
+column_data columns(2): ['sample', 'disease']
 column_names(0): []
 metadata(0): 
 </pre></div>
@@ -716,7 +716,7 @@ metadata(0):
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">iranges</span><span class="w"> </span><span class="kn">import</span> <span class="n">IRanges</span>
-<span class="n">query</span> <span class="o">=</span> <span class="n">GenomicRanges</span><span class="p">(</span><span class="n">seqnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;chr2&quot;</span><span class="p">],</span> <span class="n">ranges</span><span class="o">=</span><span class="n">IRanges</span><span class="p">([</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">]),</span> <span class="n">strand</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;+&quot;</span><span class="p">])</span>
+<span class="n">query</span> <span class="o">=</span> <span class="n">GenomicRanges</span><span class="p">(</span><span class="n">seqnames</span><span class="o">=</span><span class="p">[</span><span class="s2">"chr2"</span><span class="p">],</span> <span class="n">ranges</span><span class="o">=</span><span class="n">IRanges</span><span class="p">([</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">]),</span> <span class="n">strand</span><span class="o">=</span><span class="p">[</span><span class="s2">"+"</span><span class="p">])</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">rse</span><span class="o">.</span><span class="n">subset_by_overlaps</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -726,11 +726,11 @@ metadata(0):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: RangedSummarizedExperiment
 dimensions: (0, 6)
-assays(1): [&#39;counts&#39;]
-row_data columns(6): [&#39;seqnames&#39;, &#39;starts&#39;, &#39;ends&#39;, &#39;strand&#39;, &#39;score&#39;, &#39;GC&#39;]
+assays(1): ['counts']
+row_data columns(6): ['seqnames', 'starts', 'ends', 'strand', 'score', 'GC']
 row_names(0):  
-column_data columns(1): [&#39;treatment&#39;]
-column_names(6): [&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]
+column_data columns(1): ['treatment']
+column_names(6): ['0', '1', '2', '3', '4', '5']
 metadata(0): 
 </pre></div>
 </div>
@@ -747,79 +747,79 @@ metadata(0):
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rowData1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;seqnames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;chr_5&quot;</span><span class="p">,</span> <span class="s2">&quot;chr_3&quot;</span><span class="p">,</span> <span class="s2">&quot;chr_2&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10293804</span><span class="p">,</span> <span class="mi">12098948</span><span class="p">,</span> <span class="mi">20984392</span><span class="p">],</span>
-        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">28937947</span><span class="p">,</span> <span class="mi">3872839</span><span class="p">,</span> <span class="mi">329837492</span><span class="p">]</span>
+        <span class="s2">"seqnames"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"chr_5"</span><span class="p">,</span> <span class="s2">"chr_3"</span><span class="p">,</span> <span class="s2">"chr_2"</span><span class="p">],</span>
+        <span class="s2">"start"</span><span class="p">:</span> <span class="p">[</span><span class="mi">10293804</span><span class="p">,</span> <span class="mi">12098948</span><span class="p">,</span> <span class="mi">20984392</span><span class="p">],</span>
+        <span class="s2">"end"</span><span class="p">:</span> <span class="p">[</span><span class="mi">28937947</span><span class="p">,</span> <span class="mi">3872839</span><span class="p">,</span> <span class="mi">329837492</span><span class="p">]</span>
     <span class="p">},</span>
-    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;HER2&quot;</span><span class="p">,</span> <span class="s2">&quot;BRCA1&quot;</span><span class="p">,</span> <span class="s2">&quot;TPFK&quot;</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"HER2"</span><span class="p">,</span> <span class="s2">"BRCA1"</span><span class="p">,</span> <span class="s2">"TPFK"</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">colData1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;sample&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;SAM_1&quot;</span><span class="p">,</span> <span class="s2">&quot;SAM_3&quot;</span><span class="p">,</span> <span class="s2">&quot;SAM_3&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;disease&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;True&quot;</span><span class="p">,</span> <span class="s2">&quot;True&quot;</span><span class="p">,</span> <span class="s2">&quot;True&quot;</span><span class="p">],</span>
+        <span class="s2">"sample"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"SAM_1"</span><span class="p">,</span> <span class="s2">"SAM_3"</span><span class="p">,</span> <span class="s2">"SAM_3"</span><span class="p">],</span>
+        <span class="s2">"disease"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"True"</span><span class="p">,</span> <span class="s2">"True"</span><span class="p">,</span> <span class="s2">"True"</span><span class="p">],</span>
     <span class="p">},</span>
-    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cell_1&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_2&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_3&quot;</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"cell_1"</span><span class="p">,</span> <span class="s2">"cell_2"</span><span class="p">,</span> <span class="s2">"cell_3"</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">se1</span> <span class="o">=</span> <span class="n">SummarizedExperiment</span><span class="p">(</span>
     <span class="n">assays</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
-        <span class="s2">&quot;lognorm&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="s2">"counts"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+        <span class="s2">"lognorm"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
     <span class="p">},</span>
     <span class="n">row_data</span><span class="o">=</span><span class="n">rowData1</span><span class="p">,</span>
     <span class="n">column_data</span><span class="o">=</span><span class="n">colData1</span><span class="p">,</span>
-    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;seq_type&quot;</span><span class="p">:</span> <span class="s2">&quot;paired&quot;</span><span class="p">},</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"seq_type"</span><span class="p">:</span> <span class="s2">"paired"</span><span class="p">},</span>
 <span class="p">)</span>
 
 <span class="n">rowData2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;seqnames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;chr_5&quot;</span><span class="p">,</span> <span class="s2">&quot;chr_3&quot;</span><span class="p">,</span> <span class="s2">&quot;chr_2&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10293804</span><span class="p">,</span> <span class="mi">12098948</span><span class="p">,</span> <span class="mi">20984392</span><span class="p">],</span>
-        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">28937947</span><span class="p">,</span> <span class="mi">3872839</span><span class="p">,</span> <span class="mi">329837492</span><span class="p">]</span>
+        <span class="s2">"seqnames"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"chr_5"</span><span class="p">,</span> <span class="s2">"chr_3"</span><span class="p">,</span> <span class="s2">"chr_2"</span><span class="p">],</span>
+        <span class="s2">"start"</span><span class="p">:</span> <span class="p">[</span><span class="mi">10293804</span><span class="p">,</span> <span class="mi">12098948</span><span class="p">,</span> <span class="mi">20984392</span><span class="p">],</span>
+        <span class="s2">"end"</span><span class="p">:</span> <span class="p">[</span><span class="mi">28937947</span><span class="p">,</span> <span class="mi">3872839</span><span class="p">,</span> <span class="mi">329837492</span><span class="p">]</span>
     <span class="p">},</span>
-    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;HER2&quot;</span><span class="p">,</span> <span class="s2">&quot;BRCA1&quot;</span><span class="p">,</span> <span class="s2">&quot;TPFK&quot;</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"HER2"</span><span class="p">,</span> <span class="s2">"BRCA1"</span><span class="p">,</span> <span class="s2">"TPFK"</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">colData2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;sample&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;SAM_4&quot;</span><span class="p">,</span> <span class="s2">&quot;SAM_5&quot;</span><span class="p">,</span> <span class="s2">&quot;SAM_6&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;disease&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;True&quot;</span><span class="p">,</span> <span class="s2">&quot;False&quot;</span><span class="p">,</span> <span class="s2">&quot;True&quot;</span><span class="p">],</span>
+        <span class="s2">"sample"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"SAM_4"</span><span class="p">,</span> <span class="s2">"SAM_5"</span><span class="p">,</span> <span class="s2">"SAM_6"</span><span class="p">],</span>
+        <span class="s2">"disease"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"True"</span><span class="p">,</span> <span class="s2">"False"</span><span class="p">,</span> <span class="s2">"True"</span><span class="p">],</span>
     <span class="p">},</span>
-    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cell_4&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_5&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_6&quot;</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"cell_4"</span><span class="p">,</span> <span class="s2">"cell_5"</span><span class="p">,</span> <span class="s2">"cell_6"</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">se2</span> <span class="o">=</span> <span class="n">SummarizedExperiment</span><span class="p">(</span>
     <span class="n">assays</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
-        <span class="s2">&quot;lognorm&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="s2">"counts"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+        <span class="s2">"lognorm"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
     <span class="p">},</span>
     <span class="n">row_data</span><span class="o">=</span><span class="n">rowData2</span><span class="p">,</span>
     <span class="n">column_data</span><span class="o">=</span><span class="n">colData2</span><span class="p">,</span>
-    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;seq_platform&quot;</span><span class="p">:</span> <span class="s2">&quot;Illumina NovaSeq 6000&quot;</span><span class="p">},</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"seq_platform"</span><span class="p">:</span> <span class="s2">"Illumina NovaSeq 6000"</span><span class="p">},</span>
 <span class="p">)</span>
 
 <span class="n">rowData3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;seqnames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;chr_7&quot;</span><span class="p">,</span> <span class="s2">&quot;chr_1&quot;</span><span class="p">,</span> <span class="s2">&quot;chr_Y&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;start&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1084390</span><span class="p">,</span> <span class="mi">1874937</span><span class="p">,</span> <span class="mi">243879798</span><span class="p">],</span>
-        <span class="s2">&quot;end&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">243895239</span><span class="p">,</span> <span class="mi">358908298</span><span class="p">,</span> <span class="mi">390820395</span><span class="p">]</span>
+        <span class="s2">"seqnames"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"chr_7"</span><span class="p">,</span> <span class="s2">"chr_1"</span><span class="p">,</span> <span class="s2">"chr_Y"</span><span class="p">],</span>
+        <span class="s2">"start"</span><span class="p">:</span> <span class="p">[</span><span class="mi">1084390</span><span class="p">,</span> <span class="mi">1874937</span><span class="p">,</span> <span class="mi">243879798</span><span class="p">],</span>
+        <span class="s2">"end"</span><span class="p">:</span> <span class="p">[</span><span class="mi">243895239</span><span class="p">,</span> <span class="mi">358908298</span><span class="p">,</span> <span class="mi">390820395</span><span class="p">]</span>
     <span class="p">},</span>
-    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;MYC&quot;</span><span class="p">,</span> <span class="s2">&quot;BRCA2&quot;</span><span class="p">,</span> <span class="s2">&quot;TPFK&quot;</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"MYC"</span><span class="p">,</span> <span class="s2">"BRCA2"</span><span class="p">,</span> <span class="s2">"TPFK"</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">colData3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
-        <span class="s2">&quot;sample&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;SAM_7&quot;</span><span class="p">,</span> <span class="s2">&quot;SAM_8&quot;</span><span class="p">,</span> <span class="s2">&quot;SAM_9&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;disease&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;True&quot;</span><span class="p">,</span> <span class="s2">&quot;False&quot;</span><span class="p">,</span> <span class="s2">&quot;False&quot;</span><span class="p">],</span>
-        <span class="s2">&quot;doublet_score&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">.15</span><span class="p">,</span> <span class="mf">.62</span><span class="p">,</span> <span class="mf">.18</span><span class="p">]</span>
+        <span class="s2">"sample"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"SAM_7"</span><span class="p">,</span> <span class="s2">"SAM_8"</span><span class="p">,</span> <span class="s2">"SAM_9"</span><span class="p">],</span>
+        <span class="s2">"disease"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"True"</span><span class="p">,</span> <span class="s2">"False"</span><span class="p">,</span> <span class="s2">"False"</span><span class="p">],</span>
+        <span class="s2">"doublet_score"</span><span class="p">:</span> <span class="p">[</span><span class="mf">.15</span><span class="p">,</span> <span class="mf">.62</span><span class="p">,</span> <span class="mf">.18</span><span class="p">]</span>
     <span class="p">},</span>
-    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cell_7&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_8&quot;</span><span class="p">,</span> <span class="s2">&quot;cell_9&quot;</span><span class="p">],</span>
+    <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s2">"cell_7"</span><span class="p">,</span> <span class="s2">"cell_8"</span><span class="p">,</span> <span class="s2">"cell_9"</span><span class="p">],</span>
 <span class="p">)</span>
 <span class="n">se3</span> <span class="o">=</span> <span class="n">SummarizedExperiment</span><span class="p">(</span>
     <span class="n">assays</span><span class="o">=</span><span class="p">{</span>
-        <span class="s2">&quot;counts&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
-        <span class="s2">&quot;lognorm&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
-        <span class="s2">&quot;beta&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+        <span class="s2">"counts"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">poisson</span><span class="p">(</span><span class="n">lam</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+        <span class="s2">"lognorm"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">lognormal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span>
+        <span class="s2">"beta"</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">beta</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
     <span class="p">},</span>
     <span class="n">row_data</span><span class="o">=</span><span class="n">rowData3</span><span class="p">,</span>
     <span class="n">column_data</span><span class="o">=</span><span class="n">colData3</span><span class="p">,</span>
-    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;seq_platform&quot;</span><span class="p">:</span> <span class="s2">&quot;Illumina NovaSeq 6000&quot;</span><span class="p">},</span>
+    <span class="n">metadata</span><span class="o">=</span><span class="p">{</span><span class="s2">"seq_platform"</span><span class="p">:</span> <span class="s2">"Illumina NovaSeq 6000"</span><span class="p">},</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">se1</span><span class="p">)</span>
@@ -831,27 +831,27 @@ metadata(0):
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (3, 3)
-assays(2): [&#39;counts&#39;, &#39;lognorm&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(3): [&#39;HER2&#39;, &#39;BRCA1&#39;, &#39;TPFK&#39;]
-column_data columns(2): [&#39;sample&#39;, &#39;disease&#39;]
-column_names(3): [&#39;cell_1&#39;, &#39;cell_2&#39;, &#39;cell_3&#39;]
+assays(2): ['counts', 'lognorm']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(3): ['HER2', 'BRCA1', 'TPFK']
+column_data columns(2): ['sample', 'disease']
+column_names(3): ['cell_1', 'cell_2', 'cell_3']
 metadata(1): seq_type
 class: SummarizedExperiment
 dimensions: (3, 3)
-assays(2): [&#39;counts&#39;, &#39;lognorm&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(3): [&#39;HER2&#39;, &#39;BRCA1&#39;, &#39;TPFK&#39;]
-column_data columns(2): [&#39;sample&#39;, &#39;disease&#39;]
-column_names(3): [&#39;cell_4&#39;, &#39;cell_5&#39;, &#39;cell_6&#39;]
+assays(2): ['counts', 'lognorm']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(3): ['HER2', 'BRCA1', 'TPFK']
+column_data columns(2): ['sample', 'disease']
+column_names(3): ['cell_4', 'cell_5', 'cell_6']
 metadata(1): seq_platform
 class: SummarizedExperiment
 dimensions: (3, 3)
-assays(3): [&#39;counts&#39;, &#39;lognorm&#39;, &#39;beta&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(3): [&#39;MYC&#39;, &#39;BRCA2&#39;, &#39;TPFK&#39;]
-column_data columns(3): [&#39;sample&#39;, &#39;disease&#39;, &#39;doublet_score&#39;]
-column_names(3): [&#39;cell_7&#39;, &#39;cell_8&#39;, &#39;cell_9&#39;]
+assays(3): ['counts', 'lognorm', 'beta']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(3): ['MYC', 'BRCA2', 'TPFK']
+column_data columns(3): ['sample', 'disease', 'doublet_score']
+column_names(3): ['cell_7', 'cell_8', 'cell_9']
 metadata(1): seq_platform
 </pre></div>
 </div>
@@ -873,16 +873,16 @@ metadata(1): seq_platform
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (6, 3)
-assays(2): [&#39;counts&#39;, &#39;lognorm&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(6): [&#39;HER2&#39;, &#39;BRCA1&#39;, &#39;TPFK&#39;, &#39;HER2&#39;, &#39;BRCA1&#39;, &#39;TPFK&#39;]
-column_data columns(2): [&#39;sample&#39;, &#39;disease&#39;]
-column_names(3): [&#39;cell_4&#39;, &#39;cell_5&#39;, &#39;cell_6&#39;]
+assays(2): ['counts', 'lognorm']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(6): ['HER2', 'BRCA1', 'TPFK', 'HER2', 'BRCA1', 'TPFK']
+column_data columns(2): ['sample', 'disease']
+column_names(3): ['cell_4', 'cell_5', 'cell_6']
 metadata(1): seq_platform
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/SummarizedExperiment/SummarizedExperiment/.tox/docs/lib/python3.12/site-packages/summarizedexperiment/base.py:94: UserWarning: &#39;row_data&#39; does not contain unique &#39;row_names&#39;.
-  warn(&quot;&#39;row_data&#39; does not contain unique &#39;row_names&#39;.&quot;, UserWarning)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/runner/work/summarizedexperiment/summarizedexperiment/.tox/docs/lib/python3.12/site-packages/summarizedexperiment/base.py:94: UserWarning: 'row_data' does not contain unique 'row_names'.
+  warn("'row_data' does not contain unique 'row_names'.", UserWarning)
 </pre></div>
 </div>
 </div>
@@ -898,11 +898,11 @@ metadata(1): seq_platform
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (3, 6)
-assays(2): [&#39;counts&#39;, &#39;lognorm&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(3): [&#39;HER2&#39;, &#39;BRCA1&#39;, &#39;TPFK&#39;]
-column_data columns(2): [&#39;sample&#39;, &#39;disease&#39;]
-column_names(6): [&#39;cell_4&#39;, &#39;cell_5&#39;, &#39;cell_6&#39;, &#39;cell_1&#39;, &#39;cell_2&#39;, &#39;cell_3&#39;]
+assays(2): ['counts', 'lognorm']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(3): ['HER2', 'BRCA1', 'TPFK']
+column_data columns(2): ['sample', 'disease']
+column_names(6): ['cell_4', 'cell_5', 'cell_6', 'cell_1', 'cell_2', 'cell_3']
 metadata(1): seq_platform
 </pre></div>
 </div>
@@ -923,11 +923,11 @@ metadata(1): seq_platform
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>class: SummarizedExperiment
 dimensions: (3, 6)
-assays(3): [&#39;counts&#39;, &#39;lognorm&#39;, &#39;beta&#39;]
-row_data columns(3): [&#39;seqnames&#39;, &#39;start&#39;, &#39;end&#39;]
-row_names(3): [&#39;MYC&#39;, &#39;BRCA2&#39;, &#39;TPFK&#39;]
-column_data columns(3): [&#39;sample&#39;, &#39;disease&#39;, &#39;doublet_score&#39;]
-column_names(6): [&#39;cell_7&#39;, &#39;cell_8&#39;, &#39;cell_9&#39;, &#39;cell_1&#39;, &#39;cell_2&#39;, &#39;cell_3&#39;]
+assays(3): ['counts', 'lognorm', 'beta']
+row_data columns(3): ['seqnames', 'start', 'end']
+row_names(3): ['MYC', 'BRCA2', 'TPFK']
+column_data columns(3): ['sample', 'disease', 'doublet_score']
+column_names(6): ['cell_7', 'cell_8', 'cell_9', 'cell_1', 'cell_2', 'cell_3']
 metadata(1): seq_platform
 </pre></div>
 </div>
@@ -1073,7 +1073,7 @@ metadata(0):
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=fe7df9b0"></script>
+</div><script src="_static/documentation_options.js?v=5a057da9"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
