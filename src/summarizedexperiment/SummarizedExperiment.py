@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional, Union
+from typing import Any
 from warnings import warn
 
 import biocframe
@@ -30,12 +30,12 @@ class SummarizedExperiment(BaseSE):
 
     def __init__(
         self,
-        assays: Dict[str, Any] = None,
-        row_data: Optional[biocframe.BiocFrame] = None,
-        column_data: Optional[biocframe.BiocFrame] = None,
-        row_names: Optional[List[str]] = None,
-        column_names: Optional[List[str]] = None,
-        metadata: Optional[Union[Dict[str, Any], ut.NamedList]] = None,
+        assays: dict[str, Any] = None,
+        row_data: biocframe.BiocFrame | None = None,
+        column_data: biocframe.BiocFrame | None = None,
+        row_names: list[str] | None = None,
+        column_names: list[str] | None = None,
+        metadata: dict[str, Any] | ut.NamedList | None = None,
         _validate: bool = True,
     ) -> None:
         """Initialize a Summarized Experiment (SE).

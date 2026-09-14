@@ -10,6 +10,7 @@ As a simple example, let's create a new class called `BioSampleSE` that stores b
 ```python
 from summarizedexperiment import SummarizedExperiment
 
+
 class BioSampleSE(SummarizedExperiment):
     pass
 ```
@@ -25,8 +26,8 @@ from summarizedexperiment import SummarizedExperiment
 import biocframe
 from typing import Dict, Any, List, Optional
 
-class BioSampleSE(SummarizedExperiment):
 
+class BioSampleSE(SummarizedExperiment):
     def __init__(
         self,
         assays: Dict[str, Any] = None,
@@ -35,7 +36,7 @@ class BioSampleSE(SummarizedExperiment):
         row_names: Optional[List[str]] = None,
         column_names: Optional[List[str]] = None,
         metadata: Optional[dict] = None,
-        bio_sample_information: Optional[biocframe.BiocFrame] = None, # NEW SLOT
+        bio_sample_information: Optional[biocframe.BiocFrame] = None,  # NEW SLOT
         validate: bool = True,
     ) -> None:
         super().__init__(
@@ -66,7 +67,6 @@ Our class now validates the new slot:
 
 ```python
 class BioSampleSE(SummarizedExperiment):
-
     def __init__(
         self,
         assays: Dict[str, Any] = None,
@@ -75,7 +75,7 @@ class BioSampleSE(SummarizedExperiment):
         row_names: Optional[List[str]] = None,
         column_names: Optional[List[str]] = None,
         metadata: Optional[dict] = None,
-        bio_sample_information: Optional[biocframe.BiocFrame] = None, # NEW SLOT
+        bio_sample_information: Optional[biocframe.BiocFrame] = None,  # NEW SLOT
         validate: bool = True,
     ) -> None:
         super().__init__(
@@ -108,6 +108,7 @@ def get_bio_sample_information(self) -> Optional[biocframe.BiocFrame]:
     """
     return self._bio_sample_information
 
+
 def set_bio_sample_information(
     self, bio_sample_information: Optional[biocframe.BiocFrame], in_place: bool = False
 ) -> "BioSampleSE":
@@ -126,7 +127,7 @@ def set_bio_sample_information(
     """
     _validate_bio_sample_information(bio_sample_info)
 
-    output = self._define_output(in_place) # MAKES A SHALLOW COPY
+    output = self._define_output(in_place)  # MAKES A SHALLOW COPY
     output._bio_sample_information = bio_sample_info
     return output
 ```
@@ -139,6 +140,7 @@ def bio_sample_information(self) -> biocframe.BiocFrame:
     """Alias for :py:meth:`~get_bio_sample_info`."""
     return self.get_bio_sample_info()
 
+
 @bio_sample_information.setter
 def bio_sample_information(self, bio_sample_info: biocframe.BiocFrame) -> None:
     """Alias for :py:meth:`~set_bio_sample_info`."""
@@ -147,7 +149,6 @@ def bio_sample_information(self, bio_sample_info: biocframe.BiocFrame) -> None:
         UserWarning,
     )
     return self.set_bio_sample_information(row_ranges=row_ranges, in_place=True)
-
 ```
 
 This allows users to easily access the new property using the **dot** notation on an instance, for example, `obj.bio_sample_info` provides access to the attribute.
@@ -183,6 +184,7 @@ def __deepcopy__(self, memo=None, _nil=[]):
         metadata=_metadata_copy,
     )
 
+
 def __copy__(self):
     """
     Returns:
@@ -198,6 +200,7 @@ def __copy__(self):
         bio_sample_information=self._bio_sample_information,
         metadata=self._metadata,
     )
+
 
 def copy(self):
     """Alias for :py:meth:`~__copy__`."""
@@ -241,13 +244,12 @@ def get_slice(
 
 
 ```python
-
 def _validate_bio_sample_information(bio_sample_info):
     if not isinstance(bio_sample_info, biocframe.BiocFrame):
         raise Exception("Biosample information must be a BiocFrame object.")
 
-class BioSampleSE(SummarizedExperiment):
 
+class BioSampleSE(SummarizedExperiment):
     def __init__(
         self,
         assays: Dict[str, Any] = None,
@@ -256,7 +258,7 @@ class BioSampleSE(SummarizedExperiment):
         row_names: Optional[List[str]] = None,
         column_names: Optional[List[str]] = None,
         metadata: Optional[dict] = None,
-        bio_sample_information: Optional[biocframe.BiocFrame] = None, # NEW SLOT
+        bio_sample_information: Optional[biocframe.BiocFrame] = None,  # NEW SLOT
         validate: bool = True,
     ) -> None:
         super().__init__(
@@ -320,7 +322,6 @@ class BioSampleSE(SummarizedExperiment):
         """Alias for :py:meth:`~__copy__`."""
         return self.__copy__()
 
-
     def get_bio_sample_information(self) -> Optional[biocframe.BiocFrame]:
         """Get biosample information.
 
@@ -347,10 +348,9 @@ class BioSampleSE(SummarizedExperiment):
         """
         _validate_bio_sample_information(bio_sample_info)
 
-        output = self._define_output(in_place) # MAKES A SHALLOW COPY
+        output = self._define_output(in_place)  # MAKES A SHALLOW COPY
         output._bio_sample_information = bio_sample_info
         return output
-
 
     @property
     def bio_sample_information(self) -> biocframe.BiocFrame:
@@ -365,8 +365,6 @@ class BioSampleSE(SummarizedExperiment):
             UserWarning,
         )
         return self.set_bio_sample_information(row_ranges=row_ranges, in_place=True)
-
-
 ```
 
 That's the minimum required to extend a `SummarizedExperiment` and adapt it to new use cases. Please follow the [developer guide](https://github.com/BiocPy/developer_guide), which provides information on class design, package setup, and documentation to ensure consistency in how BiocPy-related packages are developed.
