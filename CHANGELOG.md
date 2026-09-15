@@ -1,5 +1,9 @@
 # Changelog
 
+## Version 0.8.0
+
+- Migrate to hatch.
+
 ## Version 0.7.0
 
 - Extended `__getitem__` subscripting on `RangedSummarizedExperiment` to support direct slicing by `GenomicRanges` or `CompressedGenomicRangesList` objects.
