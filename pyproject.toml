@@ -56,16 +56,15 @@ Source = "https://github.com/BiocPy/summarizedexperiment"
 
 [project.optional-dependencies]
 optional = [
-    "anndata>=0.13.2",
-    "delayedarray>=0.6.2",
-    "scipy>=1.18.1",
+    "anndata",
+    "delayedarray",
+    "scipy",
 ]
 testing = [
-    "anndata>=0.13.2",
-    "delayedarray>=0.6.2",
-    "pytest>=9.1.1",
-    "pytest-cov>=7.1.0",
-    "setuptools>=84.0.0",
+    "anndata",
+    "delayedarray",
+    "pytest",
+    "pytest-cov",
 ]
 
 [build-system]
