@@ -2,7 +2,8 @@ from __future__ import annotations
 
 import warnings
 from collections import OrderedDict, namedtuple
-from typing import Any, Dict, List, Optional, Sequence, Tuple, Union
+from collections.abc import Sequence
+from typing import Any
 from warnings import warn
 
 import biocframe
@@ -131,12 +132,12 @@ class BaseSE(ut.BiocObject):
 
     def __init__(
         self,
-        assays: Dict[str, Any] = None,
-        row_data: Optional[biocframe.BiocFrame] = None,
-        column_data: Optional[biocframe.BiocFrame] = None,
-        row_names: Optional[List[str]] = None,
-        column_names: Optional[List[str]] = None,
-        metadata: Optional[Union[Dict[str, Any], ut.NamedList]] = None,
+        assays: dict[str, Any] = None,
+        row_data: biocframe.BiocFrame | None = None,
+        column_data: biocframe.BiocFrame | None = None,
+        row_names: list[str] | None = None,
+        column_names: list[str] | None = None,
+        metadata: dict[str, Any] | ut.NamedList | None = None,
         _validate: bool = True,
     ) -> None:
         """Initialize an instance of ``BaseSE``.
@@ -287,7 +288,7 @@ class BaseSE(ut.BiocObject):
         return self.shape[0]
 
     @property
-    def shape(self) -> Tuple[int, int]:
+    def shape(self) -> tuple[int, int]:
         """Get shape of the experiment.
 
         Returns:
@@ -298,7 +299,7 @@ class BaseSE(ut.BiocObject):
         return self._shape
 
     @property
-    def dims(self) -> Tuple[int, int]:
+    def dims(self) -> tuple[int, int]:
         """Alias to :py:attr:`~summarizedexperiment.BaseSE.BaseSE.shape`.
 
         Returns:
@@ -356,7 +357,7 @@ class BaseSE(ut.BiocObject):
         )
         output += f"column_names({0 if self._column_names is None else len(self._column_names)}): {' ' if self._column_names is None else ut.print_truncated_list(self._column_names)}\n"
 
-        output += f"metadata({str(len(self.metadata))}): {ut.print_truncated_list(list(self.metadata.keys()), sep=' ', include_brackets=False, transform=lambda y: y)}"
+        output += f"metadata({len(self.metadata)!s}): {ut.print_truncated_list(list(self.metadata.keys()), sep=' ', include_brackets=False, transform=lambda y: y)}"
 
         return output
 
@@ -364,7 +365,7 @@ class BaseSE(ut.BiocObject):
     ######>> assays <<######
     ########################
 
-    def get_assays(self) -> Dict[str, Any]:
+    def get_assays(self) -> dict[str, Any]:
         """Access assays/experimental data.
 
         Returns:
@@ -373,7 +374,7 @@ class BaseSE(ut.BiocObject):
         """
         return self._assays
 
-    def set_assays(self, assays: Dict[str, Any], in_place: bool = False) -> BaseSE:
+    def set_assays(self, assays: dict[str, Any], in_place: bool = False) -> BaseSE:
         """Set new experiment data (assays).
 
         Args:
@@ -394,12 +395,12 @@ class BaseSE(ut.BiocObject):
         return output
 
     @property
-    def assays(self) -> Dict[str, Any]:
+    def assays(self) -> dict[str, Any]:
         """Alias for :py:meth:`~get_assays`."""
         return self.get_assays()
 
     @assays.setter
-    def assays(self, assays: Dict[str, Any]):
+    def assays(self, assays: dict[str, Any]):
         """Alias for :py:meth:`~set_assays` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -436,7 +437,7 @@ class BaseSE(ut.BiocObject):
 
     def set_row_data(
         self,
-        rows: Optional[biocframe.BiocFrame],
+        rows: biocframe.BiocFrame | None,
         replace_row_names: bool = False,
         in_place: bool = False,
     ) -> BaseSE:
@@ -473,12 +474,12 @@ class BaseSE(ut.BiocObject):
         return output
 
     @property
-    def rowdata(self) -> Dict[str, Any]:
+    def rowdata(self) -> dict[str, Any]:
         """Alias for :py:meth:`~get_rowdata`."""
         return self.get_row_data()
 
     @rowdata.setter
-    def rowdata(self, rows: Optional[biocframe.BiocFrame]):
+    def rowdata(self, rows: biocframe.BiocFrame | None):
         """Alias for :py:meth:`~set_rowdata` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -490,12 +491,12 @@ class BaseSE(ut.BiocObject):
         self.set_row_data(rows, in_place=True)
 
     @property
-    def row_data(self) -> Dict[str, Any]:
+    def row_data(self) -> dict[str, Any]:
         """Alias for :py:meth:`~get_rowdata`."""
         return self.get_row_data()
 
     @row_data.setter
-    def row_data(self, rows: Optional[biocframe.BiocFrame]):
+    def row_data(self, rows: biocframe.BiocFrame | None):
         """Alias for :py:meth:`~set_rowdata` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -532,7 +533,7 @@ class BaseSE(ut.BiocObject):
 
     def set_column_data(
         self,
-        cols: Optional[biocframe.BiocFrame],
+        cols: biocframe.BiocFrame | None,
         replace_column_names: bool = False,
         in_place: bool = False,
     ) -> BaseSE:
@@ -569,12 +570,12 @@ class BaseSE(ut.BiocObject):
         return output
 
     @property
-    def columndata(self) -> Dict[str, Any]:
+    def columndata(self) -> dict[str, Any]:
         """Alias for :py:meth:`~get_coldata`."""
         return self.get_column_data()
 
     @columndata.setter
-    def columndata(self, cols: Optional[biocframe.BiocFrame]):
+    def columndata(self, cols: biocframe.BiocFrame | None):
         """Alias for :py:meth:`~set_coldata` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -586,12 +587,12 @@ class BaseSE(ut.BiocObject):
         self.set_column_data(cols, in_place=True)
 
     @property
-    def coldata(self) -> Dict[str, Any]:
+    def coldata(self) -> dict[str, Any]:
         """Alias for :py:meth:`~get_coldata`."""
         return self.get_column_data()
 
     @coldata.setter
-    def coldata(self, cols: Optional[biocframe.BiocFrame]):
+    def coldata(self, cols: biocframe.BiocFrame | None):
         """Alias for :py:meth:`~set_coldata` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -603,12 +604,12 @@ class BaseSE(ut.BiocObject):
         self.set_column_data(cols, in_place=True)
 
     @property
-    def column_data(self) -> Dict[str, Any]:
+    def column_data(self) -> dict[str, Any]:
         """Alias for :py:meth:`~get_coldata`."""
         return self.get_column_data()
 
     @column_data.setter
-    def column_data(self, cols: Optional[biocframe.BiocFrame]):
+    def column_data(self, cols: biocframe.BiocFrame | None):
         """Alias for :py:meth:`~set_coldata` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -620,12 +621,12 @@ class BaseSE(ut.BiocObject):
         self.set_column_data(cols, in_place=True)
 
     @property
-    def col_data(self) -> Dict[str, Any]:
+    def col_data(self) -> dict[str, Any]:
         """Alias for :py:meth:`~get_coldata`."""
         return self.get_column_data()
 
     @col_data.setter
-    def col_data(self, cols: Optional[biocframe.BiocFrame]):
+    def col_data(self, cols: biocframe.BiocFrame | None):
         """Alias for :py:meth:`~set_coldata` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -640,14 +641,14 @@ class BaseSE(ut.BiocObject):
     ######>> row names <<#####
     ##########################
 
-    def get_row_names(self) -> Optional[ut.Names]:
+    def get_row_names(self) -> ut.Names | None:
         """
         Returns:
             List of row names, or None if no row names are available.
         """
         return self._row_names
 
-    def set_row_names(self, names: Optional[List[str]], in_place: bool = False) -> BaseSE:
+    def set_row_names(self, names: list[str] | None, in_place: bool = False) -> BaseSE:
         """Set new row names.
 
         Args:
@@ -673,12 +674,12 @@ class BaseSE(ut.BiocObject):
         return output
 
     @property
-    def rownames(self) -> Optional[ut.Names]:
+    def rownames(self) -> ut.Names | None:
         """Alias for :py:attr:`~get_row_names`, provided for back-compatibility."""
         return self.get_row_names()
 
     @rownames.setter
-    def rownames(self, names: Optional[List[str]]):
+    def rownames(self, names: list[str] | None):
         """Alias for :py:meth:`~set_row_names` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -690,12 +691,12 @@ class BaseSE(ut.BiocObject):
         self.set_row_names(names, in_place=True)
 
     @property
-    def row_names(self) -> Optional[ut.Names]:
+    def row_names(self) -> ut.Names | None:
         """Alias for :py:attr:`~get_row_names`, provided for back-compatibility."""
         return self.get_row_names()
 
     @row_names.setter
-    def row_names(self, names: Optional[List[str]]):
+    def row_names(self, names: list[str] | None):
         """Alias for :py:meth:`~set_row_names` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -710,14 +711,14 @@ class BaseSE(ut.BiocObject):
     ######>> column names <<#####
     #############################
 
-    def get_column_names(self) -> Optional[ut.Names]:
+    def get_column_names(self) -> ut.Names | None:
         """
         Returns:
             List of column names, or None if no column names are available.
         """
         return self._column_names
 
-    def set_column_names(self, names: Optional[List[str]], in_place: bool = False) -> BaseSE:
+    def set_column_names(self, names: list[str] | None, in_place: bool = False) -> BaseSE:
         """Set new column names.
 
         Args:
@@ -743,12 +744,12 @@ class BaseSE(ut.BiocObject):
         return output
 
     @property
-    def columnnames(self) -> Optional[ut.Names]:
+    def columnnames(self) -> ut.Names | None:
         """Alias for :py:attr:`~get_column_names`, provided for back-compatibility."""
         return self.get_column_names()
 
     @columnnames.setter
-    def columnnames(self, names: Optional[List[str]]):
+    def columnnames(self, names: list[str] | None):
         """Alias for :py:meth:`~set_column_names` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -760,12 +761,12 @@ class BaseSE(ut.BiocObject):
         self.set_column_names(names, in_place=True)
 
     @property
-    def colnames(self) -> Optional[ut.Names]:
+    def colnames(self) -> ut.Names | None:
         """Alias for :py:attr:`~get_column_names`, provided for back-compatibility."""
         return self.get_column_names()
 
     @colnames.setter
-    def colnames(self, names: Optional[List[str]]):
+    def colnames(self, names: list[str] | None):
         """Alias for :py:meth:`~set_column_names` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -777,12 +778,12 @@ class BaseSE(ut.BiocObject):
         self.set_column_names(names, in_place=True)
 
     @property
-    def col_names(self) -> Optional[ut.Names]:
+    def col_names(self) -> ut.Names | None:
         """Alias for :py:attr:`~get_column_names`, provided for back-compatibility."""
         return self.get_column_names()
 
     @col_names.setter
-    def col_names(self, names: Optional[List[str]]):
+    def col_names(self, names: list[str] | None):
         """Alias for :py:meth:`~set_column_names` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -794,12 +795,12 @@ class BaseSE(ut.BiocObject):
         self.set_column_names(names, in_place=True)
 
     @property
-    def column_names(self) -> Optional[ut.Names]:
+    def column_names(self) -> ut.Names | None:
         """Alias for :py:attr:`~get_column_names`, provided for back-compatibility."""
         return self.get_column_names()
 
     @column_names.setter
-    def column_names(self, names: Optional[List[str]]):
+    def column_names(self, names: list[str] | None):
         """Alias for :py:meth:`~set_column_names` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -814,7 +815,7 @@ class BaseSE(ut.BiocObject):
     ######>> assay names <<######
     #############################
 
-    def get_assay_names(self) -> List[str]:
+    def get_assay_names(self) -> list[str]:
         """Get assay names.
 
         Returns:
@@ -822,7 +823,7 @@ class BaseSE(ut.BiocObject):
         """
         return list(self.assays.keys())
 
-    def set_assay_names(self, names: List[str], in_place: bool = False) -> BaseSE:
+    def set_assay_names(self, names: list[str], in_place: bool = False) -> BaseSE:
         """Replace :py:attr:`~summarizedexperiment.BaseSE.BaseSE.assays`'s names.
 
         Args:
@@ -849,12 +850,12 @@ class BaseSE(ut.BiocObject):
         return output
 
     @property
-    def assay_names(self) -> List[str]:
+    def assay_names(self) -> list[str]:
         """Alias for :py:attr:`~get_assay_names`."""
         return self.get_assay_names()
 
     @assay_names.setter
-    def assay_names(self, names: List[str]):
+    def assay_names(self, names: list[str]):
         """Alias for :py:attr:`~set_assay_names` with ``in_place = True``.
 
         As this mutates the original object, a warning is raised.
@@ -869,7 +870,7 @@ class BaseSE(ut.BiocObject):
     ######>> assay getters <<#######
     ################################
 
-    def get_assay(self, assay: Union[int, str]) -> Any:
+    def get_assay(self, assay: int | str) -> Any:
         """Convenience method to access an :py:attr:`~summarizedexperiment.BaseSE.BaseSE.assays` by name or index.
 
         Args:
@@ -901,11 +902,11 @@ class BaseSE(ut.BiocObject):
 
         raise TypeError(f"'assay' must be a string or integer, provided '{type(assay)}'.")
 
-    def assay(self, assay: Union[int, str]) -> Any:
+    def assay(self, assay: int | str) -> Any:
         """Alias for :py:attr:`~assay`. For backwards compatibility"""
         return self.get_assay(assay)
 
-    def set_assay(self, name: Union[str, int], assay: Any, in_place: bool = False) -> BaseSE:
+    def set_assay(self, name: str | int, assay: Any, in_place: bool = False) -> BaseSE:
         """Add or replace :py:attr:`~summarizedexperiment.BaseSE.BaseSE.assays`'s.
 
         Args:
@@ -958,14 +959,14 @@ class BaseSE(ut.BiocObject):
     ######>> slicers <<#######
     ##########################
 
-    def _normalize_row_slice(self, rows: Union[str, int, bool, Sequence]):
+    def _normalize_row_slice(self, rows: str | int | bool | Sequence):
         _scalar = None
         if not (isinstance(rows, slice) and rows == slice(None)):
             rows, _scalar = ut.normalize_subscript(rows, len(self._rows), self._row_names)
 
         return rows, _scalar
 
-    def _normalize_column_slice(self, columns: Union[str, int, bool, Sequence]):
+    def _normalize_column_slice(self, columns: str | int | bool | Sequence):
         _scalar = None
         if not (isinstance(columns, slice) and columns == slice(None)):
             columns, _scalar = ut.normalize_subscript(columns, len(self._cols), self._column_names)
@@ -974,9 +975,9 @@ class BaseSE(ut.BiocObject):
 
     def subset_assays(
         self,
-        rows: Optional[Union[str, int, bool, Sequence]],
-        columns: Optional[Union[str, int, bool, Sequence]],
-    ) -> Dict[str, Any]:
+        rows: str | int | bool | Sequence | None,
+        columns: str | int | bool | Sequence | None,
+    ) -> dict[str, Any]:
         """Subset all assays by the slice defined by rows and columns.
 
         If both ``row_indices`` and ``col_indices`` are None, a shallow copy of the
@@ -1028,8 +1029,8 @@ class BaseSE(ut.BiocObject):
 
     def _generic_slice(
         self,
-        rows: Optional[Union[str, int, bool, Sequence]],
-        columns: Optional[Union[str, int, bool, Sequence]],
+        rows: str | int | bool | Sequence | None,
+        columns: str | int | bool | Sequence | None,
     ) -> SliceResult:
         """Slice ``SummarizedExperiment`` along the rows and/or columns, based on their indices or names.
 
@@ -1085,8 +1086,8 @@ class BaseSE(ut.BiocObject):
 
     def get_slice(
         self,
-        rows: Optional[Union[str, int, bool, Sequence]],
-        columns: Optional[Union[str, int, bool, Sequence]],
+        rows: str | int | bool | Sequence | None,
+        columns: str | int | bool | Sequence | None,
     ) -> BaseSE:
         """Alias for :py:attr:`~__getitem__`, for back-compatibility."""
 
@@ -1104,7 +1105,7 @@ class BaseSE(ut.BiocObject):
 
     def __getitem__(
         self,
-        args: Union[int, str, Sequence, tuple],
+        args: int | str | Sequence | tuple,
     ) -> BaseSE:
         """Subset a ``SummarizedExperiment``.
 
